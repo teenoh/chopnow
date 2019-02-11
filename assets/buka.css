@@ -7,6 +7,9 @@
     --gray: #787878;
     --black: #000;
     --black-shadow: rgba(0,0,0,0.6);
+    --green: #20ac76;
+    --green-darken: #1c9e6c;
+
 }
 
 
@@ -69,25 +72,33 @@ body {
     margin: 0 auto;
 }
 
-@media (min-width: 576px) {
+.mobile-view{
+    display: none;
+}
+
+@media (max-width: 576px) {
   .container {
     max-width: 540px;
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .container {
     max-width: 720px;
   }
+
+  .mobile-view {
+      display: block;
+  }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .container {
     max-width: 960px;
   }
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .container {
     max-width: 1140px;
   }
@@ -154,7 +165,7 @@ header .details {
     background-color: var(--white);
     width: 100%;
     padding: 1rem 0rem 1rem 0rem;
-    box-shadow: 0rem 0.1rem .2rem  var(--black-shadow);
+    box-shadow: 0rem 0.1rem .8rem  var(--white-darken-2);
 }
 
 .details h1 {
@@ -178,10 +189,12 @@ header .details {
     top: 0;
     right: 0;
     height: 100vh;
-    box-shadow: 0rem 0.4rem 1.6rem  var(--black-shadow);
+    box-shadow: 0rem 0.4rem 0.8rem  var(--black-shadow);
     padding-top: 9rem;
     padding-left: 1.6rem;
-    padding-right: 1.6rem
+    padding-right: 1.6rem;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -265,22 +278,115 @@ header .details {
     font-size: 1.6rem;
 }
 
-/* menu */
+.mobile-view-cart-btn {
+    display: none
+}
+
+
+@media (max-width: 768px){
+    .cart-container {
+        margin-right: -100rem;
+        width: 100%;
+        transition: all 0.3s ease-in-out
+    }
+    .cart-container.active {
+        margin-right: 0rem;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .cart-container .close-btn {
+        height: 3rem;
+        width: 3rem;
+        align-self: flex-end;
+    }
+
+
+    /* footer button */
+
+    .mobile-view-cart-btn {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: var(--green);
+        width: 100%;
+        padding: 1.6rem 0.8rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--white);
+    }
+    .mobile-view-cart-btn:active {
+        background-color: var(--green-darken)
+    }
+    .mobile-view-cart-btn .item-count {
+        font-family: "Lato-Light";
+        font-size: 1.2rem;
+    }
+    .mobile-view-cart-btn .view-cart {
+        font-family: "Lato";
+        text-transform: uppercase;
+        font-size: 1.8rem;
+    }
+    .mobile-view-cart-btn .total {
+        font-family: "Lato-Light";
+        font-size: 1.6rem;
+    }
+
+}
+
+
+
+/* main */
+
+
+.main-container {
+    width: calc(100vw - 30rem);
+    height: 100%;
+    padding: 0rem 3.2rem;
+    background-color: var(--white-darken-1);
+}
 
 .menu {
     margin-top: 3.2rem
 }
 
-.meal-time {
+.menu h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 3.2rem;
 
 }
 
+.meal-time {
+    margin-bottom: 3.2rem;
+}
+
+
+.meal-time h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1.6rem;
+    text-decoration: underline;
+}
+
+.meal-time-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
 .meal-item {
-    width: 30rem;
+    min-width: 30rem;
+    width: 100%;
+    max-width: 40rem;
     display: flex;
     flex-direction: row;
-    box-shadow: 0 0.2rem 0.8rem var(--black-shadow);
-    /* background-color: var(--white) */
+    box-shadow: 0 0.2rem 0.8rem var(--white-darken-2);
+    /* padding: 0.8rem; */
+    margin-right: 1.6rem;
+    margin-bottom: 1.6rem;
+    background-color: var(--white)
 }
 
 .meal-time img {
@@ -291,10 +397,36 @@ header .details {
 }
 
 .meal-item .desc{
+    flex: 1;
+    padding: 0.8rem
+}
 
+.meal-item .desc h4{
+    font-size: 1.4rem
+}
+
+.meal-item .desc span{
+    font-family: "Lato-Light"
+}
+
+
+.meal-item .action{
+    flex: 0.5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0.8rem;
+}
+
+.meal-item .action .price {
+    margin-right: 0.8rem;
+    font-size: 1.2rem;
+    color: #707070;
 }
 
 .meal-item .action .add-btn {
     width: 1.6rem;
     height: 1.6rem;
+    cursor: pointer;
 }
