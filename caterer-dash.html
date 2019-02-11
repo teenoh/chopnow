@@ -11,22 +11,86 @@
   <body>
     <main>
       <section class="sidebar">
+        <div class="logo-div">
           <h1 class="logo">ChopNow</h1>
-          <nav>
-              <div class="user-welcome">
-                  <img src="assets/images/profile_pic.jpg" alt="">
-                  <span>Welcome Teenoh!</span>
-              </div>
-              <ul class="nav-links">
-                  <li class="active">Overview</li>
-                  <li>Manage Meals</li>
-                  <li>Manage Menu</li>
-                  <li>Order History</li>
-                  <li> Account Settings </li>
-              </ul>
-          </nav>
+          <img
+            class="mobile-view cancel-btn"
+            src="assets/images/cancel.svg"
+            alt=""
+          />
+        </div>
+        <nav>
+          <div class="user-welcome">
+            <img src="assets/images/profile_pic.jpg" alt="" />
+            <span>Welcome Teenoh!</span>
+          </div>
+          <ul class="nav-links">
+            <li class="active">Overview</li>
+            <li>Manage Meals</li>
+            <li>Manage Menu</li>
+            <li>Order History</li>
+            <li>Account Settings</li>
+            <li>Logout</li>
+          </ul>
+        </nav>
       </section>
-      <section class="main-container"></section>
+      <section class="main-container">
+        <nav>
+          <span
+            ><img
+              class="hamburger mobile-view"
+              src="assets/images/hamburger.svg"
+              alt=""
+          /></span>
+          <span> 11th Feb 2019 </span>
+          <img class="notif-icon" src="assets/images/notif.svg" alt="" />
+        </nav>
+        <div class="content">
+          <h2>Today's Summary</h2>
+          <div class="order-summary">
+            <div class="card text-color-info">
+              <h4 class="count">20</h4>
+              <span class="desc">Total Orders</span>
+            </div>
+            <div class="card text-color-primary">
+              <h4 class="count">8</h4>
+              <span class="desc ">Pending Orders</span>
+            </div>
+            <div class="card text-color-success">
+              <h4 class="count">N100</h4>
+              <span class="desc">Revenue</span>
+            </div>
+          </div>
+
+          <h2>Latest Orders</h2>
+          <div class="latest-orders">
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Ordered Items</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>123322</td>
+                    <td>Starboy Wizzy</td>
+                    <td>Fried Eggs</td>
+                    <td>N1200</td>
+                    <td>Feb 11 2019</td>
+                    <td>Delivered</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
