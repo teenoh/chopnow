@@ -12,7 +12,7 @@
   --green: #20ac76;
   --green-darken: #1c9e6c;
   --info: #17a2b8;
-  --table-border-gray: #ddd;
+  --border-gray: #ddd;
 }
 
 /* Fonts */
@@ -45,14 +45,15 @@
 
 /* General styles */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html {
   font-size: 10px;
+   box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 body {
@@ -253,40 +254,48 @@ main {
   width: 2.4rem;
   height: 2.4rem;
   cursor: pointer;
+  display: block;
 }
 
 .main-container nav .notif-section {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative
 }
 
+
 .main-container nav .notif-section .notif-list {
+    display: none;
+    opacity: 0;
     position: absolute;
+    top: 1.6rem;
+    width: 20rem;
+    border: 1px solid var(--border-gray);
+    margin-top: 1.6rem;
+    transition: all 0.3s ease-in-out;
 }
 
-.main-container nav .notif-section .notif-list {
-    display: none; 
-    position: relative;
-    top: 1rem;
-    right: 1.6rem;
-    /* opacity: 0; */
-    /* transition: all 0.3s ease-in-out; */
+.main-container nav .notif-section .notif-list.active {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;    
 }
 
 .main-container nav .notif-section .notif-list li {
     list-style-type: none;
     background-color: var(--white);
+    border-bottom: 1px solid var(--border-gray);
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-family: "Lato-Light";
 }
 
 .main-container nav .notif-section .notif-list li:nth-child(even) {
     background-color: var(--white-darken-3);
 }
 
-.main-container nav .notif-section .notif-list.active {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    /* opacity: 1;     */
-}
 
 
 
@@ -327,11 +336,13 @@ main {
 .main-container .content .order-summary .card .count{
     font-size: 3.6rem;
     margin-bottom: 1.6rem;
+    text-align: right;
 }
 
 .main-container .content .order-summary .card .desc {
     font-size: 2.4rem;
-    font-family: "Lato-Light"
+    font-family: "Lato-Light";
+    text-align: right;
 }
 
 .main-container .content .order-summary .order-count {
@@ -362,11 +373,12 @@ table {
     border-color: var(--gray);
     width: 100%;
     border-collapse: collapse;
+    overflow: hidden;
 }
 
-table tr, table thead {
+/* table tr, table thead {
     width: 100%;
-}
+} */
 
 
 table th {
@@ -375,8 +387,6 @@ table th {
     padding: .8rem;
     text-align: left;
     font-size: 1.6rem;
-    
-
 }
 
 table tr td {
