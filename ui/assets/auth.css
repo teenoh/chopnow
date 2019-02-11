@@ -80,9 +80,12 @@ body {
   .container {
     max-width: 540px;
   }
+    .mobile-view {
+      display: block;
+  }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .container {
     max-width: 720px;
   }
@@ -92,13 +95,13 @@ body {
   }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .container {
     max-width: 960px;
   }
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .container {
     max-width: 1140px;
   }
@@ -118,6 +121,17 @@ main {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .sect-1 {
+        flex: none;
+        height: 20vh
+    }
 }
 
 .sect-2{
@@ -145,6 +159,10 @@ main {
     margin-bottom: 1.6rem;
 }
 
+div.form-group:last-child {
+    margin-bottom: 3.2rem;
+}
+
 .form-group label {
     display: block;
     font-size: 1.4rem;
@@ -157,6 +175,7 @@ main {
     width: 100%;
     padding: 0.8rem 1.6rem;
     font-size: 1.6rem;
+    border: 1px solid var(--gray);
 }
 
 .submit-btn {
