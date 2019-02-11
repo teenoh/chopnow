@@ -4,6 +4,7 @@
   --white: #fff;
   --white-darken-2: rgb(232, 230, 230);
   --white-darken-1: #f9f9f9;
+  --white-darken-3: #f2f2f2;
   --gray: #787878;
   --bg-gray: #EBEFF2;
   --black: #000;
@@ -11,6 +12,7 @@
   --green: #20ac76;
   --green-darken: #1c9e6c;
   --info: #17a2b8;
+  --table-border-gray: #ddd;
 }
 
 /* Fonts */
@@ -250,7 +252,43 @@ main {
 .main-container nav img {
   width: 2.4rem;
   height: 2.4rem;
+  cursor: pointer;
 }
+
+.main-container nav .notif-section {
+    position: relative;
+}
+
+.main-container nav .notif-section .notif-list {
+    position: absolute;
+}
+
+.main-container nav .notif-section .notif-list {
+    display: none; 
+    position: relative;
+    top: 1rem;
+    right: 1.6rem;
+    /* opacity: 0; */
+    /* transition: all 0.3s ease-in-out; */
+}
+
+.main-container nav .notif-section .notif-list li {
+    list-style-type: none;
+    background-color: var(--white);
+}
+
+.main-container nav .notif-section .notif-list li:nth-child(even) {
+    background-color: var(--white-darken-3);
+}
+
+.main-container nav .notif-section .notif-list.active {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    /* opacity: 1;     */
+}
+
+
 
 .main-container .content {
 }
@@ -314,8 +352,41 @@ main {
 
 /* latest orders */
 
+.table-wrapper {
+    overflow-x: auto;
+}
+
 table {
     display: table;
     background-color: var(--white);
-    border-color: var(--gray)
+    border-color: var(--gray);
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table tr, table thead {
+    width: 100%;
+}
+
+
+table th {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: .8rem;
+    text-align: left;
+    font-size: 1.6rem;
+    
+
+}
+
+table tr td {
+    padding: .8rem;
+    font-size: 1.6rem;
+    font-family: "Lato-Light";
+    cursor: pointer;
+}
+
+
+table tr:nth-child(even) {
+    background-color: var(--white-darken-3)
 }
