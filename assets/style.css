@@ -227,6 +227,7 @@ header  .hero-text-box .btn:active {
     flex-direction: column;
     transition: 0.3s ease;
     cursor: pointer;
+    
 }
 
 .popular-item:hover {
