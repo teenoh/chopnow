@@ -64,7 +64,7 @@
                 <h2>Latest Orders</h2>
                 <section class="latest-orders table-wrapper">
                     <table>
-                        <!-- <thead> -->
+                        <thead>
                         <tr>
                             <th>Order ID</th>
                             <th>Customer</th>
@@ -73,7 +73,7 @@
                             <th>Date</th>
                             <th>Status</th>
                         </tr>
-                        <!-- </thead> -->
+                        </thead>
                         <tbody>
                             <tr>
                                 <td>133312</td>
@@ -121,6 +121,30 @@
             </div>
         </section>
     </main>
+
+        <script>
+            let hamburger = document.querySelector('.hamburger')
+            let sidebar = document.querySelector('.sidebar')
+            let closebtn = document.querySelector('.cancel-btn')
+
+            let notifIcon = document.querySelector(".notif-icon")
+            let notifList = document.querySelector(".notif-list")
+
+
+            hamburger.onclick = () => {
+                sidebar.classList.toggle("active")
+            }
+
+            closebtn.onclick = () => {
+                sidebar.classList.toggle("active")
+            }
+
+            notifIcon.onclick = () => {
+                notifList.classList.toggle("active")
+            }
+
+
+        </script>
 </body>
 
 </html>
