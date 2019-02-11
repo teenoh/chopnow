@@ -70,7 +70,7 @@ body {
 /* header styles */
 
 header {
-    height: 80vh;
+    height: 70vh;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)) ,url("./images/hero-bg.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -86,7 +86,7 @@ header nav {
     z-index: 2;
     width: 100%;
     background-color: var(--primary);
-    padding: 2rem 3.2rem;
+    padding: 1rem 3.2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
