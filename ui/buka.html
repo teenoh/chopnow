@@ -152,7 +152,7 @@
     <aside class="cart-container">
       <img
         src="assets/images/close.png"
-        class=" mobile-view close-btn"
+        class=" mobile-view close-btn close-sidebar"
         alt=""
       />
       <p>Order From</p>
@@ -183,7 +183,11 @@
           </div>
           <div class="bottom">
             <div>
-              <img class="close-btn mobile-view" src="assets/images/close.png" alt="" />
+              <img
+                class="close-btn mobile-view"
+                src="assets/images/close.png"
+                alt=""
+              />
               <span>Remove</span>
             </div>
             <div>
@@ -194,6 +198,11 @@
           </div>
         </div>
       </div>
+      <div>
+        <button class="btn checkout-btn">
+          CHECKOUT
+        </button>
+      </div>
     </aside>
     <button class="btn mobile-view-cart-btn">
       <span class="item-count"> 1 ITEM </span>
@@ -201,4 +210,19 @@
       <span class="total">N2,400</span>
     </button>
   </body>
+
+  <script>
+    let viewCart = document.querySelector(".mobile-view-cart-btn");
+    let cartContainer = document.querySelector(".cart-container");
+    let closeSideBarIcon = document.querySelector(".close-sidebar")
+
+    viewCart.onclick = () => {
+      cartContainer.classList.toggle("mobile-active");
+    };
+
+    closeSideBarIcon.onclick = () => {
+      cartContainer.classList.remove("mobile-active")
+    }
+
+  </script>
 </html>
