@@ -15,6 +15,10 @@
       </section>
       <section class="sect-2">
         <div class="auth-container">
+          <div class="user-select">
+            <span class="customer-tab active">Customer</span>
+            <span class="caterer-tab">Caterer</span>
+          </div>
           <h1 class="heading">Register</h1>
           <form>
             <div class="form-group">
@@ -46,6 +50,28 @@
         </div>
       </section>
     </main>
+    <script>
+      let catererTab = document.querySelector(".caterer-tab")
+      let customerTab = document.querySelector(".customer-tab")
+      let sect1 = document.querySelector(".sect-1")
+
+      catererTab.onclick = () => {
+        if (catererTab.classList.contains("active")) {
+          return
+        }
+        customerTab.classList.remove("active")
+        catererTab.classList.add("active")
+      }
+
+      customerTab.onclick = () => {
+        if (customerTab.classList.contains("active")) {
+          return
+        }
+        catererTab.classList.remove("active")
+        customerTab.classList.add("active")
+      }
+
+    </script>
   </body>
 </html>
 

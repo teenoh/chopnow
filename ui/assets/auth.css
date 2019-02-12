@@ -212,3 +212,33 @@ div.form-group:last-child {
 .submit-btn:active {
     background-color: var(--primary-darken);
 }
+
+
+/* user select */
+
+.user-select{
+    width: 20rem;
+    margin: 0 auto;
+    margin-bottom: 3.2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.user-select .caterer-tab, .user-select .customer-tab {
+    flex: 1;
+    padding: .8rem;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.6rem;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+
+.user-select .caterer-tab.active, .user-select .customer-tab.active {
+    background-color: var(--primary);
+    color: var(--white);
+}
