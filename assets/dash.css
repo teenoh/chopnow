@@ -358,9 +358,9 @@ main {
 
 .table-wrapper {
   width: 100%;
-  border: 2px solid black;
+  /* border: 1px solid black; */
   overflow-x: scroll;
-  
+  box-shadow: 0 0.4rem 1.6rem var(--black-shadow);
 }
 
 table {
@@ -381,6 +381,7 @@ table th {
   padding: 0.8rem;
   text-align: left;
   font-size: 1.6rem;
+
 }
 
 table tr td {
@@ -393,3 +394,7 @@ table tr td {
 table tr:nth-child(even) {
   background-color: var(--white-darken-3);
 }
+
+
+
+

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="assets/dash.css" />
+    <link rel="stylesheet" href="assets/manage-meal-dash.css" />
     <title>Buka</title>
   </head>
 
@@ -55,7 +56,7 @@
           </div>
         </nav>
         <div class="content">
-          <h2>Today's Summary</h2>
+          <!-- <h2>Today's Summary</h2>
           <div class="order-summary">
             <div class="card text-color-info">
               <h4 class="count">20</h4>
@@ -69,75 +70,148 @@
               <h4 class="count">N100</h4>
               <span class="desc">Revenue</span>
             </div>
+          </div> -->
+
+          <h2>Manage Meals</h2>
+          <div class="add-meal">
+            <button class="btn add-meal-btn">Add a meal</button>
           </div>
 
-          <h2>Latest Orders</h2>
-          <section class="latest-orders table-wrapper">
-            <table>
-              <!-- <thead> -->
-              <tr>
-                <th>Order ID</th>
-                <th>Customer</th>
-                <th>Ordered Items</th>
-                <th>Amount</th>
-                <th>Date</th>
-                <th>Status</th>
-              </tr>
-              <!-- </thead> -->
-              <tbody>
-                <tr>
-                  <td>133312</td>
-                  <td>Starboy Wizzy</td>
-                  <td>Fried Eggs</td>
-                  <td>N1200</td>
-                  <td>Feb 11 2019</td>
-                  <td>Delivered</td>
-                </tr>
-                <tr>
-                  <td>123322</td>
-                  <td>Starboy Wizzy</td>
-                  <td>Fried Eggs</td>
-                  <td>N1200</td>
-                  <td>Feb 11 2019</td>
-                  <td>Delivered</td>
-                </tr>
-                <tr>
-                  <td>123322</td>
-                  <td>Starboy Wizzy</td>
-                  <td>Fried Eggs</td>
-                  <td>N1200</td>
-                  <td>Feb 11 2019</td>
-                  <td>Delivered</td>
-                </tr>
-                <tr>
-                  <td>123322</td>
-                  <td>Starboy Wizzy</td>
-                  <td>Fried Eggs</td>
-                  <td>N1200</td>
-                  <td>Feb 11 2019</td>
-                  <td>Delivered</td>
-                </tr>
-                <tr>
-                  <td>123322</td>
-                  <td>Starboy Wizzy</td>
-                  <td>Fried Eggs</td>
-                  <td>N1200</td>
-                  <td>Feb 11 2019</td>
-                  <td>Delivered</td>
-                </tr>
-              </tbody>
-            </table>
+          <h2>List of Meals</h2>
+          <section class="meals-list">
+            <div class="meal-card">
+              <img src="./assets/images/yam_n_egusi.jpg" alt="" />
+              <div class="meal-title">
+                <h4>Pounded yam and Egusi</h4>
+              </div>
+              <div class="content">
+                <span class="price">N1000</span>
+                <span class="desc">
+                  1 portion of Pounded yam and Egusi
+                </span>
+              </div>
+            </div>
+            <div class="meal-card">
+              <img src="./assets/images/fried_rice.jpg" alt="" />
+              <div class="meal-title">
+                <h4>Fried Rice</h4>
+              </div>
+              <div class="content">
+                <span class="price">N1500</span>
+                <span class="desc">
+                  1 portion of Fried Rice and 2 Turkeys
+                </span>
+              </div>
+            </div>
+            <div class="meal-card">
+              <img src="./assets/images/okro.jpeg" alt="" />
+              <div class="meal-title">
+                <h4>Okro Soup</h4>
+              </div>
+              <div class="content">
+                <span class="price">N300</span>
+                <span class="desc">
+                  1 portion
+                </span>
+              </div>
+            </div>
+            <div class="meal-card">
+              <img src="./assets/images/fried_rice.jpg" alt="" />
+              <div class="meal-title">
+                <h4>Fried Rice</h4>
+              </div>
+              <div class="content">
+                <span class="price">N1500</span>
+                <span class="desc">
+                  1 portion of Fried Rice and 2 Turkeys
+                </span>
+              </div>
+            </div>
+            <div class="meal-card">
+              <img src="./assets/images/fried_rice.jpg" alt="" />
+              <div class="meal-title">
+                <h4>Fried Rice</h4>
+              </div>
+              <div class="content">
+                <span class="price">N1500</span>
+                <span class="desc">
+                  1 portion of Fried Rice and 2 Turkeys
+                </span>
+              </div>
+            </div>
+            <div class="meal-card">
+              <img src="./assets/images/fried_rice.jpg" alt="" />
+              <div class="meal-title">
+                <h4>Fried Rice</h4>
+              </div>
+              <div class="content">
+                <span class="price">N1500</span>
+                <span class="desc">
+                  1 portion of Fried Rice and 2 Turkeys
+                </span>
+              </div>
+            </div>
           </section>
+        </div>
+      </section>
+      <section class="modal">
+        <div class="modal-dialog">
+          <div class="title">
+            <h4>Add a meal</h4>
+            <img
+              src="./assets/images/cancel.svg"
+              class="modal-close-btn"
+              alt=""
+            />
+          </div>
+          <div class="content">
+            <div class="form-group">
+              <label for=""> Meal Name </label>
+              <input type="text" />
+            </div>
+            <div class="form-group">
+              <label for=""> Picture </label>
+              <div class="img-preview">
+                <input type="file" />
+                <img
+                  src="./assets/images/placeholder-image.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for=""> Price </label>
+              <input type="text" />
+            </div>
+            <div class="form-group">
+              <label for=""> Short Description </label>
+              <textarea name="" id="" rows="3"></textarea>
+            </div>
+
+            <button class="btn add-meal-modal-btn">
+              ADD MEAL
+            </button>
+          </div>
         </div>
       </section>
     </main>
     <script>
+      // sidebar variables
       let hamburger = document.querySelector(".hamburger");
       let sidebar = document.querySelector(".sidebar");
       let closebtn = document.querySelector(".cancel-btn");
 
+      // notification variables
       let notifIcon = document.querySelector(".notif-icon");
       let notifList = document.querySelector(".notif-list");
+
+      // manage meals add btn
+      let addMealBtn = document.querySelector(".add-meal-btn");
+
+      // modal variables
+      let modal = document.querySelector(".modal");
+      let modalCloseBtn = document.querySelector(".modal-close-btn");
+      let addMealModalBtn = document.querySelector(".add-meal-modal-btn");
 
       hamburger.onclick = () => {
         sidebar.classList.toggle("active");
@@ -150,6 +224,22 @@
       notifIcon.onclick = () => {
         notifList.classList.toggle("active");
       };
+
+      // show modal on add meal btn click
+      addMealBtn.onclick = () => {
+        modal.classList.toggle("show");
+      };
+
+      // close modal on cancel btn press
+      modalCloseBtn.onclick = () => {
+        modal.classList.remove("show");
+      };
+
+      // close modal on add-meal-modal-btn click
+      addMealModalBtn.onclick = () => {
+        modal.classList.remove("show");
+      };
+
     </script>
   </body>
 </html>

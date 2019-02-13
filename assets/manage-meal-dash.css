@@ -1,0 +1,222 @@
+/* Manage meals page start */
+
+.add-meal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3.2rem;
+}
+
+.add-meal-btn {
+  background-color: var(--primary);
+  cursor: pointer;
+  padding: 0.8rem 3.2rem;
+  border-radius: 0.3rem;
+  /* align-items: center;
+  justify-content: center; */
+  color: var(--white);
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.meals-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: "space-around"
+}
+
+.meal-card {
+  background-color: var(--white);
+  min-width: 20rem;
+  flex: 1;
+  min-height: 10rem;
+  border-radius: 0.6rem;
+  position: relative;
+  box-shadow: 0 0.4rem 1.6rem var(--white-darken-2);
+  margin-right: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.meal-card img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+  border-top-left-radius: 0.6rem;
+  border-top-right-radius: 0.6rem;
+}
+
+.meal-card .meal-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-top-left-radius: 0.6rem;
+  border-top-right-radius: 0.6rem;
+  display: flex;
+  padding: 0rem 0.8rem;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.meal-card .meal-title h4 {
+  color: var(--white);
+  font-size: 2.2rem;
+  font-family: "Lato-Bold";
+  text-align: center;
+}
+
+.meal-card .content {
+  padding: 0.8rem;
+}
+
+.meal-card .content .price {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.meal-card .content .desc {
+  font-size: 1.4rem;
+  font-family: "Lato-Light";
+  display: block;
+  width: 100%;
+}
+
+
+
+
+/* modal section */
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+    padding: 3.2rem; 
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+}
+
+.modal .modal-dialog {
+    background-color: var(--white);
+    width: 50rem;
+    height: 100%;
+    border-radius: .3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal .modal-dialog .title {
+    background-color: var(--primary);
+    padding: 1.6rem 0rem;
+    height: 5rem;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+    position: relative
+}
+
+.modal .modal-dialog .title .modal-close-btn {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    cursor: pointer;
+}
+
+.modal .modal-dialog h4 {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--white);
+}
+
+
+
+/* modal content */
+.modal .modal-dialog .content {
+    padding: 3.2rem 3.2rem 1.6rem 3.2rem;
+    flex:1;
+    overflow: auto;
+}
+
+
+/* form part */
+
+form > p {
+    font-size: 1.2rem;
+    font-family: "Lato-Light";
+}
+
+.form-group{
+    margin-bottom: 1.6rem;
+}
+
+div.form-group:last-child {
+    margin-bottom: 1.6rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+}
+
+.form-group input, .form-group textarea {
+    display: block;
+    outline: none;
+    width: 100%;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.6rem;
+    border: 1px solid var(--gray);
+}
+
+.form-group .img-preview input {
+    padding: .8rem 0rem;
+    border: none;
+
+}
+
+.form-group .img-preview img {
+    width: 100%;
+    height: 20rem;
+}
+
+.add-meal-modal-btn {
+    background-color: var(--primary);
+    padding: 0.8rem 1.6rem;
+    border-radius: .3rem;
+    font-size: 1.4rem;
+    font-family: "Lato-Light";
+    color: var(--white);
+    float: right;
+}
+
+.add-meal-modal-btn:active {
+    background-color: var(--primary-darken);
+}
+
+
+@media (max-width: 576px){
+    .modal {
+        padding: 0;
+        padding-top: 3.2rem;
+        padding-bottom: 3.2rem;
+    }
+
+    .modal .modal-dialog {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+}
