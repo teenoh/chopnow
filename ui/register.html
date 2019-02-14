@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="assets/auth.css" />
+    <title>Register</title>
+  </head>
+
+  <body>
+    <main>
+      <section class="sect-1">
+        <h1 class="logo">ChopNow</h1>
+      </section>
+      <section class="sect-2">
+        <div class="auth-container">
+          <div class="user-select">
+            <span class="customer-tab active">Customer</span>
+            <span class="caterer-tab">Caterer</span>
+          </div>
+          <h1 class="heading">Register</h1>
+          <form>
+            <div class="form-group">
+              <label for=""> Email </label>
+              <input type="text" />
+            </div>
+            <div class="form-group">
+              <label for=""> Full Name </label>
+              <input type="text" />
+            </div>
+            <div class="form-group">
+              <label for=""> Phone Number </label>
+              <input type="text" />
+            </div>
+
+            <div class="form-group">
+              <label for=""> Password </label>
+              <input type="password" />
+            </div>
+            <div class="form-group">
+              <label for=""> Confirm Password </label>
+              <input type="password" />
+            </div>
+            <p class="">
+              Already have an account? <a href="login.html">Login</a>
+            </p>
+            <button class="btn submit-btn">Sign up</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script>
+      let catererTab = document.querySelector(".caterer-tab")
+      let customerTab = document.querySelector(".customer-tab")
+      let sect1 = document.querySelector(".sect-1")
+
+      catererTab.onclick = () => {
+        if (catererTab.classList.contains("active")) {
+          return
+        }
+        customerTab.classList.remove("active")
+        catererTab.classList.add("active")
+      }
+
+      customerTab.onclick = () => {
+        if (customerTab.classList.contains("active")) {
+          return
+        }
+        catererTab.classList.remove("active")
+        customerTab.classList.add("active")
+      }
+
+    </script>
+  </body>
+</html>
+
+
+
+
+<!-- caterer registration info
+Business name
+email address
+business phone number
+password
+business address -->

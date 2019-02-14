@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="assets/dash.css" />
+    <title>Buka</title>
+</head>
+
+<body>
+    <main>
+        <section class="sidebar">
+            <div class="logo-div">
+                <h1 class="logo">ChopNow</h1>
+                <img class="mobile-view cancel-btn" src="assets/images/cancel.svg" alt="" />
+            </div>
+            <nav>
+                <div class="user-welcome">
+                    <img src="assets/images/profile_pic.jpg" alt="" />
+                    <span>Welcome Teenoh!</span>
+                </div>
+                <ul class="nav-links">
+                    <li ><a href="caterer-dash.html">Overview </a></li>
+                    <li><a href="caterer-manage-meals.html">Manage Meals</a></li>
+                    <li><a href="caterer-manage-menu.html">Manage Menu</a></li>
+                    <li><a href="caterer-order-history.html">Order History</a></li>
+                    <li class="active"><a href="">Account Settings</a></li>
+                    <li><a href="/">Logout</a></li>
+                </ul>
+            </nav>
+        </section>
+        <section class="main-container">
+            <nav>
+                <span><img class="hamburger mobile-view" src="assets/images/hamburger.svg" alt="" /></span>
+                <span> 11th Feb 2019 </span>
+                <div class="notif-section">
+                    <img class="notif-icon" src="assets/images/notif.svg" alt="" />
+                    <ul class="notif-list ">
+                        <li>Ade just made an order</li>
+                        <li>Femi just made an order</li>
+                        <li>Tunji just made an order</li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="content">
+                <h2>Today's Summary</h2>
+                <div class="order-summary">
+                    <div class="card text-color-info">
+                        <h4 class="count">20</h4>
+                        <span class="desc">Total Orders</span>
+                    </div>
+                    <div class="card text-color-primary">
+                        <h4 class="count">8</h4>
+                        <span class="desc ">Pending Orders</span>
+                    </div>
+                    <div class="card text-color-success">
+                        <h4 class="count">N100</h4>
+                        <span class="desc">Revenue</span>
+                    </div>
+                </div>
+
+                <h2>Latest Orders</h2>
+                <section class="latest-orders table-wrapper">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Ordered Items</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>133312</td>
+                                <td>Starboy Wizzy</td>
+                                <td>Fried Eggs</td>
+                                <td>N1200</td>
+                                <td>Feb 11 2019</td>
+                                <td>Delivered</td>
+                            </tr>
+                            <tr>
+                                <td>123322</td>
+                                <td>Starboy Wizzy</td>
+                                <td>Fried Eggs</td>
+                                <td>N1200</td>
+                                <td>Feb 11 2019</td>
+                                <td>Delivered</td>
+                            </tr>
+                            <tr>
+                                <td>123322</td>
+                                <td>Starboy Wizzy</td>
+                                <td>Fried Eggs</td>
+                                <td>N1200</td>
+                                <td>Feb 11 2019</td>
+                                <td>Delivered</td>
+                            </tr>
+                            <tr>
+                                <td>123322</td>
+                                <td>Starboy Wizzy</td>
+                                <td>Fried Eggs</td>
+                                <td>N1200</td>
+                                <td>Feb 11 2019</td>
+                                <td>Delivered</td>
+                            </tr>
+                            <tr>
+                                <td>123322</td>
+                                <td>Starboy Wizzy</td>
+                                <td>Fried Eggs</td>
+                                <td>N1200</td>
+                                <td>Feb 11 2019</td>
+                                <td>Delivered</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </section>
+    </main>
+
+        <script>
+            let hamburger = document.querySelector('.hamburger')
+            let sidebar = document.querySelector('.sidebar')
+            let closebtn = document.querySelector('.cancel-btn')
+
+            let notifIcon = document.querySelector(".notif-icon")
+            let notifList = document.querySelector(".notif-list")
+
+
+            hamburger.onclick = () => {
+                sidebar.classList.toggle("active")
+            }
+
+            closebtn.onclick = () => {
+                sidebar.classList.toggle("active")
+            }
+
+            notifIcon.onclick = () => {
+                notifList.classList.toggle("active")
+            }
+
+
+        </script>
+</body>
+
+</html>
