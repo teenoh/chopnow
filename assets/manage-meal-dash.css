@@ -69,6 +69,21 @@
   text-align: center;
 }
 
+.meal-card .dropdown {
+  position: absolute;
+  right: .8rem;
+  top: .8rem;
+  z-index:5;
+  cursor: pointer;
+
+}
+
+.meal-card .dropdown img {
+  width: 1.6rem;
+  height: 1.6rem;
+
+}
+
 .meal-card .content {
   padding: 0.8rem;
 }
