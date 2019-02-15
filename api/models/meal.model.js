@@ -4,7 +4,7 @@ class Meal {
         this.name = null
         this.size = null
         this.price = null
-        this.desc = null
+        // this.desc = null
     }
 
 
