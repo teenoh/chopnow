@@ -13,7 +13,7 @@ const MealService = {
         })
     },
     addMeal(meal){
-        mealLen  = dummyData.meals.length
+        const mealLen  = dummyData.meals.length
         const lastId = dummyData.meals[mealLen - 1].id
         const newId = lastId + 1
 
@@ -23,7 +23,7 @@ const MealService = {
         return meal
     },
     getAMeal(id){
-        const meal = dummyData.meals.find(meal => meal.id = id)
+        const meal = dummyData.meals.find(meal => meal.id == id)
         return meal || {}
 
     }
