@@ -11,7 +11,7 @@ const MealController = {
       .status(200);
   },
 
-  addMeal(req, res) {
+  addAMeal(req, res) {
     /*
             Expect json of the format
             {
@@ -21,7 +21,7 @@ const MealController = {
             }
         */
 
-    const newMeal = req.body();
+    const newMeal = req.body;
     const createdMeal = MealService.addMeal(newMeal);
 
     return res
@@ -32,7 +32,7 @@ const MealController = {
       .status(201);
   },
   getSingleMeal(req, res) {
-    const { id } = request.params;
+    const { id } = req.params;
     const foundMeal = MealService.getAMeal(id)
       return res
           .json({
