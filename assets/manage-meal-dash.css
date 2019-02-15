@@ -69,20 +69,59 @@
   text-align: center;
 }
 
+.meal-card .dropdown .dropdown-icon { /*menu select on cards*/
+  width: 1.6rem;
+  height: 1.6rem;
+  align-self: flex-end;
+
+}
+
 .meal-card .dropdown {
   position: absolute;
   right: .8rem;
   top: .8rem;
   z-index:5;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.meal-card .dropdown .dropdown-list {
+  display: none;
+  background-color: var(--white);
+  border-radius: .3rem;
+}
+
+/* this displays dropdown when menu button is clicked */
+.meal-card .dropdown .dropdown-icon:hover + .dropdown-list {
+  display: block
+}
+
+/* displays dropdown when dropdown list class contains show */
+.meal-card .dropdown .dropdown-list.show {
+  display: block
+}
+
+/* quick hack to make the dropdown list remain */
+.meal-card .dropdown .dropdown-list:hover {
+  display: block
+}
+
+.meal-card .dropdown .dropdown-list li {
+  list-style-type: none;
+  border-bottom: 1px solid var(--white-darken-2);
+  font-size: 1.4rem;
+  text-align: center;
+  border-radius: inherit;
+  padding: .8rem;
 
 }
 
-.meal-card .dropdown img {
-  width: 1.6rem;
-  height: 1.6rem;
-
+.meal-card .dropdown .dropdown-list li:hover {
+  background-color: var(--white-darken-2)
 }
+
+
 
 .meal-card .content {
   padding: 0.8rem;
