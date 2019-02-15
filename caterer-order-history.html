@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="assets/dash.css" />
+    <link rel="stylesheet" href="assets/admin-order-history.css" />
     <title>Buka</title>
   </head>
 
@@ -55,7 +56,7 @@
           </div>
         </nav>
         <div class="content">
-          <h2>Today's Summary</h2>
+          <!-- <h2>Today's Summary</h2>
           <div class="order-summary">
             <div class="card text-color-info">
               <h4 class="count">20</h4>
@@ -69,22 +70,62 @@
               <h4 class="count">N100</h4>
               <span class="desc">Revenue</span>
             </div>
-          </div>
+          </div> -->
 
-          <h2>Latest Orders</h2>
+          <h2>Order History</h2>
           <section class="latest-orders table-wrapper">
             <table>
-              <!-- <thead> -->
-              <tr>
-                <th>Order ID</th>
-                <th>Customer</th>
-                <th>Ordered Items</th>
-                <th>Amount</th>
-                <th>Date</th>
-                <th>Status</th>
-              </tr>
-              <!-- </thead> -->
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer</th>
+                  <th>Ordered Items</th>
+                  <th>Amount</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
               <tbody>
+                <tr>
+                  <td>133312</td>
+                  <td>Starboy Wizzy</td>
+                  <td>Fried Eggs</td>
+                  <td>N1200</td>
+                  <td>Feb 11 2019</td>
+                  <td>Delivered</td>
+                </tr>
+                <tr>
+                  <td>123322</td>
+                  <td>Starboy Wizzy</td>
+                  <td>Fried Eggs</td>
+                  <td>N1200</td>
+                  <td>Feb 11 2019</td>
+                  <td>Delivered</td>
+                </tr>
+                <tr>
+                  <td>123322</td>
+                  <td>Starboy Wizzy</td>
+                  <td>Fried Eggs</td>
+                  <td>N1200</td>
+                  <td>Feb 11 2019</td>
+                  <td>Delivered</td>
+                </tr>
+                <tr>
+                  <td>123322</td>
+                  <td>Starboy Wizzy</td>
+                  <td>Fried Eggs</td>
+                  <td>N1200</td>
+                  <td>Feb 11 2019</td>
+                  <td>Delivered</td>
+                </tr>
+                <tr>
+                  <td>123322</td>
+                  <td>Starboy Wizzy</td>
+                  <td>Fried Eggs</td>
+                  <td>N1200</td>
+                  <td>Feb 11 2019</td>
+                  <td>Delivered</td>
+                </tr>
                 <tr>
                   <td>133312</td>
                   <td>Starboy Wizzy</td>
@@ -128,6 +169,91 @@
               </tbody>
             </table>
           </section>
+        </div>
+      </section>
+      <section class="modal show">
+        <div class="modal-dialog">
+          <div class="title">
+            <h4>Order #13432334</h4>
+            <img src="./assets/images/cancel.svg" class="modal-close-btn" alt="" />
+          </div>
+          <div class="content">
+            <div style="display: flex; flex-direction:row; justify-content: space-between;">
+              <span style="margin-right: .8rem; font-size: 1.4rem">Order from Mrs Adetolu</span><span style="font-size: 1.4rem;">17th Aug 2019</span>
+            </div>
+            <p>17 Okeho Street, Ilupeju</p>
+
+            <h4 style="text-align: center"> Orders </h4>
+            <div  style="height:30rem; border: 1px solid blue; overflow: auto">
+              <table style="">
+                <!-- <tr>
+                  <th>No</th>
+                  <th>Meal</th>
+                  <th>Price</th>
+                </tr> -->
+                <tr>
+                  <td>2x</td>
+                  <td>Jollof Rice</td>
+                  <td>N350</td>
+                </tr>
+                <tr>
+                  <td>2x</td>
+                  <td>Jollof Rice</td>
+                  <td>N350</td>
+                </tr>
+                <tr>
+                  <td>2x</td>
+                  <td>Jollof Rice</td>
+                  <td>N350</td>
+                </tr>
+                <tr>
+                  <td>2x</td>
+                  <td>Jollof Rice</td>
+                  <td>N350</td>
+                </tr>
+                <tr>
+                  <td>2x</td>
+                  <td>Jollof Rice</td>
+                  <td>N350</td>
+                </tr>
+                <tr>
+                  <td>2x</td>
+                  <td>Jollof Rice</td>
+                  <td>N350</td>
+                </tr>
+                <tr>
+                  <td>2x</td>
+                  <td>Jollof Rice</td>
+                  <td>N350</td>
+                </tr>
+                <tr>
+                  <td>2x</td>
+                  <td>Jollof Rice</td>
+                  <td>N350</td>
+                </tr>
+                <tr>
+                  <td>2x</td>
+                  <td>Jollof Rice</td>
+                  <td>N350</td>
+                </tr>
+                <tr>
+                  <td>2x</td>
+                  <td>Jollof Rice</td>
+                  <td>N350</td>
+                </tr>
+                <tr>
+                  <td>2x</td>
+                  <td>Jollof Rice</td>
+                  <td>N350</td>
+                </tr>
+                <tr>
+                  <td>2x</td>
+                  <td>Jollof Rice</td>
+                  <td>N350</td>
+                </tr>
+              </table>
+            </div>
+          </div>
         </div>
       </section>
     </main>
