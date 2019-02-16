@@ -3,10 +3,9 @@ node_js:
   - "stable"
 before_script: 
   - cd api
-
-script:
   - npm install
-  - npm run test
+script:
+  - npm test
 
 cache:
   directories:
