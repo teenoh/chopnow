@@ -1,0 +1,435 @@
+:root {
+  --primary: rgb(246, 52, 64);
+  --primary-darken: rgb(199, 41, 51);
+  --white: #fff;
+  --white-darken-2: rgb(232, 230, 230);
+  --white-darken-1: #f9f9f9;
+  --gray: #787878;
+  --black: #000;
+  --black-shadow: rgba(0, 0, 0, 0.2);
+  --green: #20ac76;
+  --green-darken: #1c9e6c;
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: "Lato";
+  src: url("fonts/Lato/Lato-Regular.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Lato-Bold";
+  src: url("fonts/Lato/Lato-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Lato-Bold-Italic";
+  src: url("fonts/Lato/Lato-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "Lato-Light";
+  src: url("fonts/Lato/Lato-Light.ttf");
+}
+
+@font-face {
+  font-family: "Lobster";
+  src: url("fonts/Lobster/Lobster-Regular.ttf");
+}
+
+/* General styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: var(--white-darken-1);
+}
+
+.btn {
+  outline: none;
+  text-decoration: none;
+  border: none;
+}
+
+.container {
+  width: 100%;
+  padding: 0rem 1.6rem;
+  margin: 0 auto;
+}
+
+.mobile-view {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .mobile-view {
+    display: block;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* header styles */
+
+header {
+  height: 60vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("./images/fried_rice.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+
+header nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  background-color: var(--primary);
+  padding: 1rem 3.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav .logo {
+  font-family: "Lobster";
+  font-size: 2rem;
+  color: var(--white);
+}
+
+header nav .btn {
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--white);
+  background-color: transparent;
+  border-radius: 3rem;
+}
+
+header nav .btn:hover {
+  background-color: var(--white);
+  color: var(--primary);
+}
+
+header nav .btn:active {
+  background-color: var(--white-darken-2);
+  color: var(--primary);
+}
+
+header .details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: var(--white);
+  width: 100%;
+  padding: 1rem 0rem 1rem 0rem;
+  box-shadow: 0rem 0.1rem 0.8rem var(--white-darken-2);
+}
+
+.details h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.details p {
+  color: var(--gray);
+  font-family: "Lato-Light";
+  font-size: 1.6rem;
+}
+
+/* cart */
+.cart-container {
+  width: 30rem;
+  background-color: var(--white);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  height: 100vh;
+  box-shadow: 0rem 0.4rem 0.8rem var(--black-shadow);
+  padding-top: 9rem;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-container > p {
+  color: var(--gray);
+  font-family: "Lato-Light";
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.cart-container > h3 {
+  font-family: "Lato-Bold";
+  font-size: 1.8rem;
+}
+
+.cart-container .cart-list {
+  margin-top: 3.2rem;
+  flex: 1;
+}
+
+.checkout-btn {
+  /* display: block; */
+  background-color: var(--green);
+  cursor: pointer;
+  width: 100%;
+  padding: 1.6rem 0.8rem;
+  margin-bottom: .8rem;
+  border-radius: .3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.6rem;
+}
+
+.checkout-btn:active {
+    background-color: var(--green-darken);
+}
+
+.cart-container .cart-item {
+  border-top: 0.1rem solid var(--gray);
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.cart-item .top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.cart-item .top .item-title {
+  font-family: "Lato-Bold";
+  font-size: 1.6rem;
+}
+
+.cart-item .top .item-amount {
+  font-size: 1.6rem;
+}
+
+.cart-item .bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-bottom: 0.8rem */
+}
+
+.cart-item .bottom img {
+  width: 1.6rem;
+  height: 1.6rem;
+  cursor: pointer;
+}
+
+.cart-item .bottom > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cart-item .bottom .close-btn,
+.cart-item .bottom .plus-btn {
+  margin-right: 0.8rem;
+}
+
+.cart-item .bottom .minus-btn {
+  margin-left: 0.8rem;
+}
+
+.cart-item .bottom div:first-child span {
+  text-transform: uppercase;
+  color: var(--gray);
+  font-family: "Lato-Light";
+  font-size: 1.1rem;
+}
+
+.cart-item .bottom div:nth-child(2) span {
+  color: var(--gray);
+  font-family: "Lato";
+  font-size: 1.6rem;
+}
+
+.mobile-view-cart-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .cart-container {
+    margin-right: -100rem;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+  .cart-container.mobile-active {
+    margin-right: 0rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .cart-container .close-btn {
+    height: 3rem;
+    width: 3rem;
+    align-self: flex-end;
+  }
+
+  /* footer button */
+
+  .mobile-view-cart-btn {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--green);
+    width: 100%;
+    padding: 1.6rem 0.8rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--white);
+  }
+  .mobile-view-cart-btn:active {
+    background-color: var(--green-darken);
+  }
+  .mobile-view-cart-btn .item-count {
+    font-family: "Lato-Light";
+    font-size: 1.2rem;
+  }
+  .mobile-view-cart-btn .view-cart {
+    font-family: "Lato";
+    text-transform: uppercase;
+    font-size: 1.8rem;
+  }
+  .mobile-view-cart-btn .total {
+    font-family: "Lato-Light";
+    font-size: 1.6rem;
+  }
+}
+
+/* main */
+
+.main-container {
+  width: calc(100vw - 30rem);
+  height: 100%;
+  padding: 0rem 3.2rem;
+  background-color: var(--white-darken-1);
+}
+
+.menu {
+  margin-top: 3.2rem;
+}
+
+.menu h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 3.2rem;
+}
+
+.meal-time {
+  margin-bottom: 3.2rem;
+}
+
+.meal-time h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.6rem;
+  text-decoration: underline;
+}
+
+.meal-time-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.meal-item {
+  min-width: 30rem;
+  width: 100%;
+  max-width: 40rem;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 0.2rem 0.8rem var(--white-darken-2);
+  /* padding: 0.8rem; */
+  margin-right: 1.6rem;
+  margin-bottom: 1.6rem;
+  background-color: var(--white);
+}
+
+.meal-time img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  margin-right: 0.8rem;
+}
+
+.meal-item .desc {
+  flex: 1;
+  padding: 0.8rem;
+}
+
+.meal-item .desc h4 {
+  font-size: 1.4rem;
+}
+
+.meal-item .desc span {
+  font-family: "Lato-Light";
+}
+
+.meal-item .action {
+  flex: 0.5;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0.8rem;
+}
+
+.meal-item .action .price {
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+  color: #707070;
+}
+
+.meal-item .action .add-btn {
+  width: 1.6rem;
+  height: 1.6rem;
+  cursor: pointer;
+}

@@ -1,0 +1,244 @@
+:root {
+    --primary: rgba(246, 52, 64,1);
+    --primary-transparent: rgba(246, 52, 64,.7);
+    --primary-shadow: rgba(246, 52, 64,.1);
+    --primary-darken: rgb(199, 41, 51);
+    --white: #fff;
+    --white-darken-2: rgb(232, 230, 230);
+    --white-darken-1: #F9F9F9;
+    --gray: #787878;
+    --black: #000;
+    --black-shadow: rgba(0,0,0,0.2);
+    --green: #20ac76;
+    --green-darken: #1c9e6c;
+
+}
+
+
+/* Fonts */
+
+@font-face{
+    font-family: "Lato";
+    src: url("fonts/Lato/Lato-Regular.ttf");
+    font-weight: normal
+}
+
+@font-face{
+    font-family: "Lato-Bold";
+    src: url("fonts/Lato/Lato-Bold.ttf");
+}
+
+@font-face{
+    font-family: "Lato-Bold-Italic";
+    src: url("fonts/Lato/Lato-BoldItalic.ttf");
+}
+
+@font-face{
+    font-family: "Lato-Light";
+    src: url("fonts/Lato/Lato-Light.ttf");
+}
+
+@font-face{
+    font-family: "Lobster";
+    src: url("fonts/Lobster/Lobster-Regular.ttf");
+}
+
+
+
+/* General styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.btn {
+    outline: none;
+    text-decoration: none;
+    border: none;
+}
+
+.container {
+    width: 100%;
+    padding: 0rem 1.6rem;
+    margin: 0 auto;
+}
+
+.mobile-view{
+    display: none;
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+    .mobile-view {
+      display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .mobile-view {
+      display: block;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* main */
+
+main {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+.sect-1{
+    flex:1;
+    background: linear-gradient(var(--primary-transparent),var(--primary-transparent)), url("./images/login-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sect-1 .logo {
+    font-family: 'Lobster';
+    font-size: 5rem;
+    color: var(--white);
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .sect-1 {
+        flex: none;
+        height: 20vh
+    }
+
+    .sect-1 .logo {
+        font-size: 3rem;
+    }
+}
+
+.sect-2{
+    flex:1;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sect-2 .auth-container {
+    width: 50rem;
+    /* border: 1px solid black; */
+    padding: 1.6rem;
+}
+
+.sect-2 .auth-container .heading {
+    font-size: 3.2rem;
+    text-align: center;
+    margin-bottom: 3.2rem
+}
+
+/* form part */
+
+form > p {
+    font-size: 1.2rem;
+    font-family: "Lato-Light";
+}
+
+.form-group{
+    margin-bottom: 1.6rem;
+}
+
+div.form-group:last-child {
+    margin-bottom: 3.2rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.form-group input {
+    display: block;
+    outline: none;
+    width: 100%;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.6rem;
+    border: 1px solid var(--gray);
+}
+
+
+.submit-btn {
+    background-color: var(--primary);
+    padding: 0.8rem 1.6rem;
+    border-radius: .3rem;
+    font-size: 1.4rem;
+    font-family: "Lato-Light";
+    color: var(--white);
+    margin-top: 3.2rem;
+}
+
+.submit-btn:active {
+    background-color: var(--primary-darken);
+}
+
+
+/* user select */
+
+.user-select{
+    width: 20rem;
+    margin: 0 auto;
+    margin-bottom: 3.2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.user-select .caterer-tab, .user-select .customer-tab {
+    flex: 1;
+    padding: .8rem;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.6rem;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+
+.user-select .caterer-tab.active, .user-select .customer-tab.active {
+    background-color: var(--primary);
+    color: var(--white);
+}
