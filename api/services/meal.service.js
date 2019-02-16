@@ -35,6 +35,10 @@ const MealService = {
         dummyData.meals[oldMealIndex] = newMeal
         
         return newMeal
+    },
+    deleteAMeal: (id) => {
+        dummyData.meals = dummyData.meals.filter(meal => meal.id != id)
+        return 
     }
 }
 

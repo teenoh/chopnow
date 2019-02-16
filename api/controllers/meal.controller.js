@@ -46,11 +46,23 @@ const MealController = {
     const updatedMeal = req.body; // get updated meal data from body
     const newMeal = MealService.updateAMeal(id, updatedMeal);
 
-    return res.json({
-      status: 'success',
-      data: newMeal
-    });
+    return res
+      .json({
+        status: 'success',
+        data: newMeal
+      })
+      .status(200);
   },
+  deleteAMeal: (req, res) => {
+    const { id } = req.params;
+    MealService.deleteAMeal(id);
+
+    return res
+      .json({
+        status: 'success'
+      })
+      .status(204);
+  }
 };
 
 export default MealController;
