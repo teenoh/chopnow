@@ -1,7 +1,7 @@
 import MealService from '../services/meal.service';
 
 const MealController = {
-  fetchAllMeals(req, res) {
+  fetchAllMeals: (req, res) => {
     const allMeals = MealService.fetchAllMeals();
     return res
       .json({
@@ -11,7 +11,7 @@ const MealController = {
       .status(200);
   },
 
-  addAMeal(req, res) {
+  addAMeal: (req, res) => {
     /*
             Expect json of the format
             {
@@ -31,16 +31,38 @@ const MealController = {
       })
       .status(201);
   },
-  getSingleMeal(req, res) {
+  getSingleMeal: (req, res) => {
     const { id } = req.params;
-    const foundMeal = MealService.getAMeal(id)
-      return res
-          .json({
-              status: 'success',
-              data: foundMeal
-          })
-          .status(200);
+    const foundMeal = MealService.getAMeal(id);
+    return res
+      .json({
+        status: 'success',
+        data: foundMeal
+      })
+      .status(200);
+  },
+  updateAMeal: (req, res) => {
+    const { id } = req.params;
+    const updatedMeal = req.body; // get updated meal data from body
+    const newMeal = MealService.updateAMeal(id, updatedMeal);
+
+    return res
+      .json({
+        status: 'success',
+        data: newMeal
+      })
+      .status(200);
+  },
+  deleteAMeal: (req, res) => {
+    const { id } = req.params;
+    MealService.deleteAMeal(id);
+
+    return res
+      .json({
+        status: 'success'
+      })
+      .status(204);
   }
 };
 
-export default MealController
+export default MealController;
