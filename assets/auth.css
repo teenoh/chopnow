@@ -1,7 +1,7 @@
 :root {
     --primary: rgba(246, 52, 64,1);
-    --primary-transparent: rgba(246, 52, 64,.7);
-    --primary-shadow: rgba(246, 52, 64,.25);
+    --primary-transparent: rgba(246, 52, 64,.25);
+    --primary-shadow: rgba(246, 52, 64,.1);
     --primary-darken: rgb(199, 41, 51);
     --white: #fff;
     --white-darken-2: rgb(232, 230, 230);
