@@ -27,8 +27,14 @@ const MealService = {
         return meal || {}
 
     },
-    updateAMeal:  (id) => {
-
+    updateAMeal:  (id, updatedMeal) => {
+        const oldMealIndex = dummyData.meals.findIndex(meal => meal.id == id)
+        const oldMeal = dummyData.meals[oldMealIndex]
+        const newMeal = {...oldMeal, ...updatedMeal, id: parseInt(id)}
+        
+        dummyData.meals[oldMealIndex] = newMeal
+        
+        return newMeal
     }
 }
 
