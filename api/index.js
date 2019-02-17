@@ -3,7 +3,6 @@ import bodyParser from "body-parser"
 
 
 import mealRoutes from "./routes/meal.route"
-import menuRoutes from "./routes/menu.route"
 
 const app = express()
 
@@ -16,7 +15,6 @@ app.get("/",  (req, res) =>  {
 })
 
 app.use("/api/v1/meals", mealRoutes)
-app.use("/api/v1/menu", menuRoutes)
 
 
 app.listen(PORT,  () =>  {
