@@ -91,6 +91,28 @@ body {
   display: none;
 }
 
+.text-center{
+  text-align: center;
+}
+
+.d-flex {
+  display: flex
+}
+
+.flex-row {
+  flex-direction: row
+}
+
+.justify-content-between{
+  justify-content: space-between
+}
+
+.align-items-center {
+  align-items: center
+}
+
+
+
 @media (max-width: 576px) {
   .container {
     max-width: 540px;
@@ -302,6 +324,12 @@ main {
 
 .main-container .content > h2 {
   font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}
+
+.main-container .content > h3 {
+  font-size: 1.6rem;
   text-transform: uppercase;
   margin-bottom: 1.6rem;
 }
