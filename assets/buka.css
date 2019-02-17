@@ -130,6 +130,7 @@ header nav .logo {
   font-family: "Lobster";
   font-size: 2rem;
   color: var(--white);
+  text-decoration: none
 }
 
 header nav .btn {
@@ -443,12 +444,14 @@ header .details {
 /* modal section */
 
 .modal {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
+    right:0;
+    bottom: 0;
     width: 100%;
     z-index: 100;
-    height: 100vh;
+    /* height: 100vh; */
     background-color: rgba(0,0,0,0.4);
     display: none;
     padding: 3.2rem; 

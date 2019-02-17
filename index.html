@@ -10,7 +10,7 @@
   <body>
     <header>
       <nav>
-        <div class="logo"><h1>Chop Now</h1></div>
+        <a href="/" class="logo"><h1>Chop Now</h1></a>
 
         <div>
           <a class="btn" href="login.html">Sign in</a>
@@ -20,9 +20,9 @@
       <div class="hero-text-box">
         <h1>Feeling Hungry!</h1>
         <p>Order food online easily and chop now</p>
-        <button class="btn ">
+        <a href="#bukas" class="btn ">
           Order Now
-        </button>
+        </a>
       </div>
     </header>
 
@@ -45,21 +45,30 @@
       </div>
     </section>
 
-    <section class="popular">
+    <section id="bukas" class="popular">
       <div class="container">
         <h2>Popular Bukas</h2>
         <div class="popular-row">
-          <div class="popular-item" onclick="window.location.pathname += 'buka.html'">
+          <div
+            class="popular-item"
+            onclick="window.location.pathname += 'buka.html'"
+          >
             <img src="assets/images/yam_n_egusi.jpg" alt="" />
             <h3 class="title">Mama Put</h3>
             <span class="content">Local, Intercontinental, Beverages.</span>
           </div>
-          <div class="popular-item" onclick="window.location.pathname += 'buka.html'">
+          <div
+            class="popular-item"
+            onclick="window.location.pathname += 'buka.html'"
+          >
             <img src="assets/images/fried_rice.jpg" alt="" />
             <h3 class="title">Iya Jeremiah</h3>
             <span class="content">Local, Intercontinental, Beverages.</span>
           </div>
-          <div class="popular-item" onclick="window.location.pathname += 'buka.html'">
+          <div
+            class="popular-item"
+            onclick="window.location.pathname += 'buka.html'"
+          >
             <img src="assets/images/okro.jpeg" alt="" />
             <h3 class="title">Delicious Treat</h3>
             <span class="content">Local, Intercontinental, Beverages.</span>
@@ -67,8 +76,10 @@
         </div>
       </div>
     </section>
-    <section class="next">
-
-    </section>
+    <!-- <section class="caterer-sect">
+    </section> -->
+    <footer>
+      <p>Made with ❤️ by teenoh</p>
+    </footer>
   </body>
 </html>
