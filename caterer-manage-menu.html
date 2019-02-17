@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="assets/dash.css" />
+    <link rel="stylesheet" href="assets/manage-menu-dash.css">
     <title>Buka</title>
   </head>
 
@@ -55,81 +56,163 @@
           </div>
         </nav>
         <div class="content">
-          <h2>Today's Summary</h2>
-          <div class="order-summary">
-            <div class="card text-color-info">
-              <h4 class="count">20</h4>
-              <span class="desc">Total Orders</span>
-            </div>
-            <div class="card text-color-primary">
-              <h4 class="count">8</h4>
-              <span class="desc ">Pending Orders</span>
-            </div>
-            <div class="card text-color-success">
-              <h4 class="count">N100</h4>
-              <span class="desc">Revenue</span>
-            </div>
+          <h2>Manage Menu</h2>
+          <div class="add-meal">
+            <button class="btn add-meal-btn">Setup Menu</button>
           </div>
-
-          <h2>Latest Orders</h2>
-          <section class="latest-orders table-wrapper">
-            <table>
-              <!-- <thead> -->
-              <tr>
-                <th>Order ID</th>
-                <th>Customer</th>
-                <th>Ordered Items</th>
-                <th>Amount</th>
-                <th>Date</th>
-                <th>Status</th>
-              </tr>
-              <!-- </thead> -->
-              <tbody>
-                <tr>
-                  <td>133312</td>
-                  <td>Starboy Wizzy</td>
-                  <td>Fried Eggs</td>
-                  <td>N1200</td>
-                  <td>Feb 11 2019</td>
-                  <td>Delivered</td>
-                </tr>
-                <tr>
-                  <td>123322</td>
-                  <td>Starboy Wizzy</td>
-                  <td>Fried Eggs</td>
-                  <td>N1200</td>
-                  <td>Feb 11 2019</td>
-                  <td>Delivered</td>
-                </tr>
-                <tr>
-                  <td>123322</td>
-                  <td>Starboy Wizzy</td>
-                  <td>Fried Eggs</td>
-                  <td>N1200</td>
-                  <td>Feb 11 2019</td>
-                  <td>Delivered</td>
-                </tr>
-                <tr>
-                  <td>123322</td>
-                  <td>Starboy Wizzy</td>
-                  <td>Fried Eggs</td>
-                  <td>N1200</td>
-                  <td>Feb 11 2019</td>
-                  <td>Delivered</td>
-                </tr>
-                <tr>
-                  <td>123322</td>
-                  <td>Starboy Wizzy</td>
-                  <td>Fried Eggs</td>
-                  <td>N1200</td>
-                  <td>Feb 11 2019</td>
-                  <td>Delivered</td>
-                </tr>
-              </tbody>
-            </table>
+          
+          <h2>List of Meals</h2>
+          <section class="meals-list">
+            <div class="meal-card">
+              <img src="./assets/images/yam_n_egusi.jpg" alt="" />
+              <div class="meal-title">
+                <h4>Pounded yam and Egusi</h4>
+              </div>
+              <div class="dropdown">
+                <img class="dropdown-icon" src="./assets/images/meal-menu.svg" alt="" />
+                <ul class="dropdown-list">
+                  <li> Edit Meal </li>
+                  <li>Delete Meal </li>
+                </ul>
+              </div>
+              <div class="content">
+                <span class="price">N1000</span>
+                <span class="desc">
+                  1 portion of Pounded yam and Egusi
+                </span>
+              </div>
+            </div>
+            <div class="meal-card">
+              <img src="./assets/images/fried_rice.jpg" alt="" />
+              <div class="meal-title">
+                <h4>Fried Rice</h4>
+              </div>
+              <div class="dropdown">
+                <img class="dropdown-icon" src="./assets/images/meal-menu.svg" alt="" />
+                <ul class="dropdown-list">
+                  <li> Edit Meal </li>
+                  <li>Delete Meal </li>
+                </ul>
+              </div>
+              <div class="content">
+                <span class="price">N1500</span>
+                <span class="desc">
+                  1 portion of Fried Rice and 2 Turkeys
+                </span>
+              </div>
+            </div>
+            <div class="meal-card">
+              <img src="./assets/images/okro.jpeg" alt="" />
+              <div class="meal-title">
+                <h4>Okro Soup</h4>
+              </div>
+              <div class="dropdown">
+                <img class="dropdown-icon" src="./assets/images/meal-menu.svg" alt="" />
+                <ul class="dropdown-list">
+                  <li> Edit Meal </li>
+                  <li>Delete Meal </li>
+                </ul>
+              </div>
+              <div class="content">
+                <span class="price">N300</span>
+                <span class="desc">
+                  1 portion
+                </span>
+              </div>
+            </div>
+            <div class="meal-card">
+              <img src="./assets/images/fried_rice.jpg" alt="" />
+              <div class="meal-title">
+                <h4>Fried Rice</h4>
+              </div>
+              <div class="dropdown">
+                <img class="dropdown-icon" src="./assets/images/meal-menu.svg" alt="" />
+                <ul class="dropdown-list">
+                  <li> Edit Meal </li>
+                  <li>Delete Meal </li>
+                </ul>
+              </div>
+              <div class="content">
+                <span class="price">N1500</span>
+                <span class="desc">
+                  1 portion of Fried Rice and 2 Turkeys
+                </span>
+              </div>
+            </div>
+            <div class="meal-card">
+              <img src="./assets/images/fried_rice.jpg" alt="" />
+              <div class="meal-title">
+                <h4>Fried Rice</h4>
+              </div>
+              <div class="dropdown">
+                <img class="dropdown-icon" src="./assets/images/meal-menu.svg" alt="" />
+                <ul class="dropdown-list">
+                  <li> Edit Meal </li>
+                  <li>Delete Meal </li>
+                </ul>
+              </div>
+              <div class="content">
+                <span class="price">N1500</span>
+                <span class="desc">
+                  1 portion of Fried Rice and 2 Turkeys
+                </span>
+              </div>
+            </div>
+            <div class="meal-card">
+              <img src="./assets/images/fried_rice.jpg" alt="" />
+              <div class="meal-title">
+                <h4>Fried Rice</h4>
+              </div>
+              <div class="dropdown">
+                <img class="dropdown-icon" src="./assets/images/meal-menu.svg" alt="" />
+                <ul class="dropdown-list">
+                  <li> Edit Meal </li>
+                  <li>Delete Meal </li>
+                </ul>
+              </div>
+              <div class="content">
+                <span class="price">N1500</span>
+                <span class="desc">
+                  1 portion of Fried Rice and 2 Turkeys
+                </span>
+              </div>
+            </div>
           </section>
         </div>
       </section>
+      <div class="modal">
+        <div class="modal-dialog">
+          <div class="title">
+            <h4>Add a meal</h4>
+            <img src="./assets/images/cancel.svg" class="modal-close-btn" alt="" />
+          </div>
+          <div class="content">
+            <div class="form-group">
+              <label for=""> Meal Name </label>
+              <input type="text" />
+            </div>
+            <div class="form-group">
+              <label for=""> Picture </label>
+              <div class="img-preview">
+                <input type="file" />
+                <img src="./assets/images/placeholder-image.jpg" alt="" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for=""> Price </label>
+              <input type="text" />
+            </div>
+            <div class="form-group">
+              <label for=""> Short Description </label>
+              <textarea name="" id="" rows="3"></textarea>
+            </div>
+      
+            <button class="btn add-meal-modal-btn">
+              ADD MEAL
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
     <script>
       let hamburger = document.querySelector(".hamburger");
