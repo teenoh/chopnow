@@ -171,20 +171,33 @@
           </section>
         </div>
       </section>
-      <section class="modal show">
+      <section class="modal">
         <div class="modal-dialog">
           <div class="title">
             <h4>Order #13432334</h4>
-            <img src="./assets/images/cancel.svg" class="modal-close-btn" alt="" />
+            <img
+              src="./assets/images/cancel.svg"
+              class="modal-close-btn"
+              alt=""
+            />
           </div>
           <div class="content">
-            <div style="display: flex; flex-direction:row; justify-content: space-between;">
-              <span style="margin-right: .8rem; font-size: 1.4rem">Order from Mrs Adetolu</span><span style="font-size: 1.4rem;">17th Aug 2019</span>
+            <div
+              style="display: flex; flex-direction:row; justify-content: space-between;"
+            >
+              <span style="margin-right: .8rem; font-size: 1.4rem"
+                >Order from Mrs Adetolu</span
+              ><span style="font-size: 1.4rem;">17th Aug 2019</span>
             </div>
-            <p>17 Okeho Street, Ilupeju</p>
+            <div style="margin-bottom: 1.6rem">
+              <p>17 Okeho Street, Ilupeju</p>
+            </div>
 
-            <h4 style="text-align: center"> Orders </h4>
-            <div  style="height:30rem; border: 1px solid blue; overflow: auto">
+            <h4 style="text-align: center; font-size: 1.8rem; color: black">Orders</h4>
+
+            <div
+              style="max-height:30rem; border: 1px solid black; margin-top: .8rem ;overflow: auto"
+            >
               <table style="">
                 <!-- <tr>
                   <th>No</th>
@@ -211,47 +224,25 @@
                   <td>Jollof Rice</td>
                   <td>N350</td>
                 </tr>
-                <tr>
-                  <td>2x</td>
-                  <td>Jollof Rice</td>
-                  <td>N350</td>
-                </tr>
-                <tr>
-                  <td>2x</td>
-                  <td>Jollof Rice</td>
-                  <td>N350</td>
-                </tr>
-                <tr>
-                  <td>2x</td>
-                  <td>Jollof Rice</td>
-                  <td>N350</td>
-                </tr>
-                <tr>
-                  <td>2x</td>
-                  <td>Jollof Rice</td>
-                  <td>N350</td>
-                </tr>
-                <tr>
-                  <td>2x</td>
-                  <td>Jollof Rice</td>
-                  <td>N350</td>
-                </tr>
-                <tr>
-                  <td>2x</td>
-                  <td>Jollof Rice</td>
-                  <td>N350</td>
-                </tr>
-                <tr>
-                  <td>2x</td>
-                  <td>Jollof Rice</td>
-                  <td>N350</td>
-                </tr>
-                <tr>
-                  <td>2x</td>
-                  <td>Jollof Rice</td>
-                  <td>N350</td>
-                </tr>
               </table>
+            </div>
+            <div
+              style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 1.6rem;"
+            >
+              <span style="font-size:1.6rem;">Total</span>
+              <span style="font-size: 1.6rem; font-family: 'Lato-Bold'">
+                N700</span
+              >
+            </div>
+            <div style="margin-top: 3.2rem">
+              <span style="font-size: 1.4rem; margin-right: .8rem"
+                >Delivery Status</span
+              >
+              <select style="border: .1rem solid black; " name="" id="">
+                <option value="">Pending</option>
+                <option value="">Delivered</option>
+                <option value="">Canceled</option>
+              </select>
             </div>
           </div>
         </div>
@@ -265,6 +256,11 @@
       let notifIcon = document.querySelector(".notif-icon");
       let notifList = document.querySelector(".notif-list");
 
+      // modal stuff
+      let modalClose = document.querySelector(".modal-close-btn");
+      let modal = document.querySelector(".modal");
+      let orderRows = document.querySelectorAll("tr");
+
       hamburger.onclick = () => {
         sidebar.classList.toggle("active");
       };
@@ -275,6 +271,15 @@
 
       notifIcon.onclick = () => {
         notifList.classList.toggle("active");
+      };
+
+      // modal ish
+      const modalShow = () => {
+        modal.classList.toggle("show");
+      };
+      orderRows.forEach(row => (row.onclick = () => modalShow())); // display modal each time a row is clicked
+      modalClose.onclick = () => {
+        modal.classList.remove("show");
       };
     </script>
   </body>
