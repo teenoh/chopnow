@@ -299,6 +299,7 @@ header .details {
     margin-right: -100rem;
     width: 100%;
     z-index: 5;
+    padding-top: 3.2rem;
     transition: all 0.3s ease-in-out;
   }
   .cart-container.mobile-active {
