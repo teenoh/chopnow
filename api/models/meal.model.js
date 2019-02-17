@@ -1,12 +1,10 @@
 class Meal {
-    constructor(){
-        this.id = null
-        this.name = null
-        this.price = null
-        this.desc = null
-    }
-
-
+  constructor() {
+    this.id = null;
+    this.name = null;
+    this.price = null;
+    this.desc = null;
+  }
 }
 
-export default Meal
+export default Meal;

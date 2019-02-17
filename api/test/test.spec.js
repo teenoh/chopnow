@@ -1,10 +1,8 @@
-import assert from "assert"
-import { expect } from "chai"
-import should from "chai/register-should"
+import assert from 'assert';
+import { expect } from 'chai';
+import should from 'chai/register-should';
 
-
-
-const sayHello = () => "Hello"
+const sayHello = () => 'Hello';
 
 describe('Basic Mocha test', () => {
   it('should return number of characters in a string', () => {
@@ -18,7 +16,7 @@ describe('Basic Mocha test', () => {
   describe('sayHello function', () => {
     it("should say 'Hello'", () => {
       const str = sayHello();
-      expect(str).to.equal('Hello')
-    })
-  })
+      expect(str).to.equal('Hello');
+    });
+  });
 });
