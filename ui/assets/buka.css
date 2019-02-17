@@ -116,7 +116,7 @@ header nav {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   background-color: var(--primary);
   padding: 1rem 3.2rem;
@@ -178,7 +178,7 @@ header .details {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 5;
+  z-index: 2;
   height: 100vh;
   box-shadow: 0rem 0.4rem 0.8rem var(--black-shadow);
   padding-top: 9rem;
@@ -298,6 +298,7 @@ header .details {
   .cart-container {
     margin-right: -100rem;
     width: 100%;
+    z-index: 5;
     transition: all 0.3s ease-in-out;
   }
   .cart-container.mobile-active {
@@ -318,6 +319,7 @@ header .details {
     position: fixed;
     bottom: 0;
     left: 0;
+    right: 0;
     background-color: var(--green);
     width: 100%;
     padding: 1.6rem 0.8rem;
@@ -432,4 +434,89 @@ header .details {
   width: 1.6rem;
   height: 1.6rem;
   cursor: pointer;
+}
+
+
+
+
+/* modal section */
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+    padding: 3.2rem; 
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .modal-dialog {
+    background-color: var(--white);
+    width: 40rem;
+    min-height: 20rem;
+    border-radius: .3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3.2rem;
+}
+
+.modal .modal-dialog h4 {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--black);
+    margin-bottom: 1.6rem;
+}
+
+
+.modal .modal-dialog .success-tick{
+  width: 6.4rem;
+  height: 6.4rem;
+  margin-bottom: 3.2rem;
+}
+
+.modal .modal-dialog .modal-btn {
+  width: 10rem;
+  background-color: var(--green);
+  padding: .8rem 1.6rem;
+  color: var(--white);
+  font-size: 1.4rem;
+  margin-bottom: 1.6rem;
+  cursor: pointer
+
+}
+
+.modal .modal-dialog .modal-btn:active {
+    background-color: var(--green-darken);
+}
+
+/* modal content */
+.modal .modal-dialog .content {
+    padding: 3.2rem 3.2rem 1.6rem 3.2rem;
+    height: 20rem
+}
+
+@media (max-width: 576px){
+    .modal {
+        padding: 0;
+        padding-top: 3.2rem;
+        padding-bottom: 3.2rem;
+        width: 100%;
+    }
+
+    .modal .modal-dialog {
+        width: 90%;
+        margin: 0 auto;
+    }
+
 }
