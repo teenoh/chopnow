@@ -73,7 +73,7 @@ export default {
           }
         ]
       },
-      caterer_id: 1
+      vendor_id: 1
     },
     {
       id: 2,
@@ -122,7 +122,7 @@ export default {
           }
         ]
       },
-      caterer_id: 4
+      vendor_id: 4
     }
   ]
 };
