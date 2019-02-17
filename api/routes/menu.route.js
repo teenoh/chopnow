@@ -4,7 +4,7 @@ import MenuController from '../controllers/menu.controller';
 const router = Router();
 
 router.get('/', MenuController.fetchAllMenus);
-// router.post('/', MealController.addAMeal);
+router.post('/', MenuController.addAMenu);
 // router.get('/:id', MealController.getSingleMeal);
 // router.put('/:id', MealController.updateAMeal);
 // router.delete('/:id', MealController.deleteAMeal);

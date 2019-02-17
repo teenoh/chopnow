@@ -22,24 +22,7 @@ const MenuService = {
         dummyData.menus.push(menu);
         return menu
     },
-    getAMenu: (id) => {
-        const menu = dummyData.menus.find(menu => menu.id == id)
-        return menu || {}
-
-    },
-    updateAMenu: (id, updatedmenu) => {
-        const oldmenuIndex = dummyData.menus.findIndex(menu => menu.id == id)
-        const oldmenu = dummyData.menus[oldmenuIndex]
-        const newmenu = { ...oldmenu, ...updatedmenu, id: parseInt(id) }
-
-        dummyData.menus[oldmenuIndex] = newmenu
-
-        return newmenu
-    },
-    deleteAMenu: (id) => {
-        dummyData.menus = dummyData.menus.filter(menu => menu.id != id)
-        return
-    }
+    
 }
 
 export default MenuService
