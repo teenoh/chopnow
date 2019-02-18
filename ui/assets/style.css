@@ -93,6 +93,7 @@ header nav .logo {
   font-family: "Lobster";
   font-size: 2rem;
   color: var(--white);
+  text-decoration: none;
 }
 
 header nav .btn {
@@ -138,6 +139,8 @@ header .hero-text-box .btn {
   color: var(--white);
   border-radius: 1rem;
   margin-top: 4rem;
+  text-decoration: none;
+  display: inline-block
 }
 
 header .hero-text-box .btn:active {
@@ -302,8 +305,22 @@ header .hero-text-box .btn:active {
     }
 }
 
-/* next section */
-.next {
+/* caterer section */
+.caterer-sect {
   background-color: var(--primary);
   min-height: 30rem;
+}
+
+/* footer */
+footer {
+  text-align: center;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: .8rem 0rem;
+
+}
+
+footer p {
+  font-size: 1.6rem;
+  font-family: "Lato-Light"
 }
