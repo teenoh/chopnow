@@ -1,7 +1,7 @@
 # ChopNow
 
 [![Build Status](https://travis-ci.org/teenoh/chopnow.svg?branch=master)](https://travis-ci.org/teenoh/chopnow)
-[![Coverage Status](https://coveralls.io/repos/github/teenoh/chopnow/badge.svg?branch=master)](https://coveralls.io/github/teenoh/chopnow?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/teenoh/chopnow/badge.svg?branch=master)](https://coveralls.io/github/teenoh/chopnow?branch=develop)
 [![Maintainability](https://api.codeclimate.com/v1/badges/23434e5694a35e8868a7/maintainability)](https://codeclimate.com/github/teenoh/chopnow/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/23434e5694a35e8868a7/test_coverage)](https://codeclimate.com/github/teenoh/chopnow/test_coverage)
 
