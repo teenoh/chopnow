@@ -12,21 +12,23 @@ cache:
     - "node_modules"
 
 before_script: 
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.5.1
+  - export PATH="$HOME/.yarn/bin:$PATH"
   - cd api
-  - npm install
+  - yarn install
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 
 
 script:
-  - npm test
-  - npm run coverage
+  - yarn test
+  - yarn run coverage
 
 
 after_success:
-    - npm run coverage
-    - npm install codeclimate-test-reporter
+    - yarn run coverage
+    - yarn add codeclimate-test-reporter
     - codeclimate-test-reporter < coverage/lcov.info
 
 after_script:
