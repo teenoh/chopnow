@@ -1,3 +1,18 @@
+/*  */
+
+.main-container .content div > h3 {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}
+
+.meal-add-btn {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1.6rem;
+    cursor: pointer;
+}
+
 /* Manage meals page start */
 
 .add-meal {
@@ -23,14 +38,16 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: "space-around"
+  justify-content: "space-around";
+  margin-bottom: 1.6rem
+
 }
 
 .meal-card {
   background-color: var(--white);
   min-width: 20rem;
   flex: 1;
-  min-height: 10rem;
+  min-height: 8rem;
   border-radius: 0.6rem;
   position: relative;
   box-shadow: 0 0.4rem 1.6rem var(--white-darken-2);
@@ -40,10 +57,9 @@
 
 .meal-card img {
   width: 100%;
-  height: 15rem;
+  height: 8rem;
   object-fit: cover;
-  border-top-left-radius: 0.6rem;
-  border-top-right-radius: 0.6rem;
+  border-radius: 0.6rem;
 }
 
 .meal-card .meal-title {
@@ -51,10 +67,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 15rem;
+  height: 8rem;
   background-color: rgba(0, 0, 0, 0.4);
-  border-top-left-radius: 0.6rem;
-  border-top-right-radius: 0.6rem;
+  border-radius: 0.6rem;
   display: flex;
   padding: 0rem 0.8rem;
   justify-content: center;
@@ -64,19 +79,20 @@
 
 .meal-card .meal-title h4 {
   color: var(--white);
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-family: "Lato-Bold";
   text-align: center;
 }
 
-.meal-card .dropdown .dropdown-icon { /*menu select on cards*/
-  width: 1.6rem;
+/* menu select on cards */
+/* .meal-card .dropdown .dropdown-icon {  */
+  /* width: 1.6rem;
   height: 1.6rem;
   align-self: flex-end;
 
-}
+} */
 
-.meal-card .dropdown {
+/* .meal-card .dropdown {
   position: absolute;
   right: .8rem;
   top: .8rem;
@@ -84,30 +100,30 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-}
+} */
 
-.meal-card .dropdown .dropdown-list {
+/* .meal-card .dropdown .dropdown-list {
   display: none;
   background-color: var(--white);
   border-radius: .3rem;
-}
+} */
 
 /* this displays dropdown when menu button is clicked */
-.meal-card .dropdown .dropdown-icon:hover + .dropdown-list {
+/* .meal-card .dropdown .dropdown-icon:hover + .dropdown-list {
   display: block
-}
+} */
 
 /* displays dropdown when dropdown list class contains show */
-.meal-card .dropdown .dropdown-list.show {
+/* .meal-card .dropdown .dropdown-list.show {
   display: block
-}
+} */
 
 /* quick hack to make the dropdown list remain */
-.meal-card .dropdown .dropdown-list:hover {
+/* .meal-card .dropdown .dropdown-list:hover {
   display: block
-}
+} */
 
-.meal-card .dropdown .dropdown-list li {
+/* .meal-card .dropdown .dropdown-list li {
   list-style-type: none;
   border-bottom: 1px solid var(--white-darken-2);
   font-size: 1.4rem;
@@ -115,15 +131,15 @@
   border-radius: inherit;
   padding: .8rem;
 
-}
+} */
 
-.meal-card .dropdown .dropdown-list li:hover {
+/* .meal-card .dropdown .dropdown-list li:hover {
   background-color: var(--white-darken-2)
-}
+} */
 
 
 
-.meal-card .content {
+/* .meal-card .content {
   padding: 0.8rem;
 }
 
@@ -138,7 +154,7 @@
   font-family: "Lato-Light";
   display: block;
   width: 100%;
-}
+} */
 
 
 
@@ -213,48 +229,30 @@ form > p {
     font-family: "Lato-Light";
 }
 
-.form-group{
-    margin-bottom: 1.6rem;
+.form-checkbox-group {
+    margin-bottom: 1.6rem
 }
 
-div.form-group:last-child {
-    margin-bottom: 1.6rem;
-}
-
-.form-group label {
-    display: block;
-    font-size: 1.4rem;
-    margin-bottom: 0.4rem;
-}
-
-.form-group input, .form-group textarea {
-    display: block;
-    outline: none;
-    width: 100%;
-    padding: 0.8rem 1.6rem;
+.form-checkbox-group label {
     font-size: 1.6rem;
-    border: 1px solid var(--gray);
+    margin-left: .8rem;
 }
 
-.form-group .img-preview input {
-    padding: .8rem 0rem;
-    border: none;
-
+div.form-checkbox-group:last-child {
+    margin-bottom: 3.2rem;
 }
 
-.form-group .img-preview img {
-    width: 100%;
-    height: 20rem;
-}
+
 
 .add-meal-modal-btn {
+    display: block;
     background-color: var(--primary);
-    padding: 0.8rem 1.6rem;
+    width: 100%;
+    padding: 0.8rem 0;
     border-radius: .3rem;
     font-size: 1.4rem;
     font-family: "Lato-Light";
     color: var(--white);
-    float: right;
 }
 
 .add-meal-modal-btn:active {

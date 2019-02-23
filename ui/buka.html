@@ -10,12 +10,12 @@
   <body>
     <header>
       <nav>
-        <div class="logo">
+        <a href="/" class="logo">
           <h1>Chop Now</h1>
-        </div>
+        </a>
 
         <div>
-          <button class="btn">Sign in</button>
+          <a href="login.html" class="btn">Sign in</a>
         </div>
       </nav>
 
@@ -209,12 +209,31 @@
       <span class="view-cart"> View Cart </span>
       <span class="total">N2,400</span>
     </button>
+
+
+    <!-- modal section -->
+
+    <div class="modal">
+      <div class="modal-dialog">
+        <h4>Order has been placed</h4> 
+
+        <img class="success-tick" src="./assets/images/success-tick.svg" alt="" />
+          <button class="btn modal-btn">
+            Ok
+          </button>
+      </div>
+    </div>
+
   </body>
 
   <script>
     let viewCart = document.querySelector(".mobile-view-cart-btn");
     let cartContainer = document.querySelector(".cart-container");
-    let closeSideBarIcon = document.querySelector(".close-sidebar")
+    let closeSideBarIcon = document.querySelector(".close-sidebar");
+
+    let checkoutBtn = document.querySelector(".checkout-btn")
+    let modal = document.querySelector(".modal")
+    let modalCloseBtn = document.querySelector(".modal-btn")
 
     viewCart.onclick = () => {
       cartContainer.classList.toggle("mobile-active");
@@ -222,6 +241,15 @@
 
     closeSideBarIcon.onclick = () => {
       cartContainer.classList.remove("mobile-active")
+    }
+
+    checkoutBtn.onclick = () => {
+      cartContainer.classList.remove("mobile-active")  //close cart screen
+      modal.classList.toggle('show')
+    }
+
+    modalCloseBtn.onclick = () => {
+      modal.classList.remove("show")
     }
 
   </script>

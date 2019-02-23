@@ -85,7 +85,11 @@
                 <h4>Pounded yam and Egusi</h4>
               </div>
               <div class="dropdown">
-                <img src="./assets/images/meal-menu.svg" alt="" />
+                <img class="dropdown-icon" src="./assets/images/meal-menu.svg" alt="" />
+                <ul class="dropdown-list">
+                  <li> Edit Meal </li>
+                  <li>Delete Meal </li>
+                </ul>
               </div>
               <div class="content">
                 <span class="price">N1000</span>
@@ -100,7 +104,11 @@
                 <h4>Fried Rice</h4>
               </div>
               <div class="dropdown">
-                <img src="./assets/images/meal-menu.svg" alt="" />
+                <img class="dropdown-icon" src="./assets/images/meal-menu.svg" alt="" />
+                <ul class="dropdown-list">
+                  <li> Edit Meal </li>
+                  <li>Delete Meal </li>
+                </ul>
               </div>
               <div class="content">
                 <span class="price">N1500</span>
@@ -115,7 +123,11 @@
                 <h4>Okro Soup</h4>
               </div>
               <div class="dropdown">
-                <img src="./assets/images/meal-menu.svg" alt="" />
+                <img class="dropdown-icon" src="./assets/images/meal-menu.svg" alt="" />
+                <ul class="dropdown-list">
+                  <li> Edit Meal </li>
+                  <li>Delete Meal </li>
+                </ul>
               </div>
               <div class="content">
                 <span class="price">N300</span>
@@ -130,41 +142,48 @@
                 <h4>Fried Rice</h4>
               </div>
               <div class="dropdown">
-                <img src="./assets/images/meal-menu.svg" alt="" />
-              </div>
-              <div class="content">
-                <span class="price">N1500</span>
-                <span class="desc">
-                  1 portion of Fried Rice and 2 Turkeys
-                </span>
-              </div>
-            </div>
-            <div class="meal-card">
-              <img src="./assets/images/fried_rice.jpg" alt="" />
-              <div class="meal-title">
-                <h4>Fried Rice</h4>
-              </div>
-              <div class="dropdown">
-                <img src="./assets/images/meal-menu.svg" alt="" />
-              </div>
-              <div class="content">
-                <span class="price">N1500</span>
-                <span class="desc">
-                  1 portion of Fried Rice and 2 Turkeys
-                </span>
-              </div>
-            </div>
-            <div class="meal-card">
-              <img src="./assets/images/fried_rice.jpg" alt="" />
-              <div class="meal-title">
-                <h4>Fried Rice</h4>
-              </div>
-              <div class="dropdown">
-                <img src="./assets/images/meal-menu.svg" alt="" />
+                <img class="dropdown-icon" src="./assets/images/meal-menu.svg" alt="" />
                 <ul class="dropdown-list">
-                  <li>Stuff</li>
-                  <li>Stuff</li>
-                  <li>Stuff</li>
+                  <li> Edit Meal </li>
+                  <li>Delete Meal </li>
+                </ul>
+              </div>
+              <div class="content">
+                <span class="price">N1500</span>
+                <span class="desc">
+                  1 portion of Fried Rice and 2 Turkeys
+                </span>
+              </div>
+            </div>
+            <div class="meal-card">
+              <img src="./assets/images/fried_rice.jpg" alt="" />
+              <div class="meal-title">
+                <h4>Fried Rice</h4>
+              </div>
+              <div class="dropdown">
+                <img class="dropdown-icon" src="./assets/images/meal-menu.svg" alt="" />
+                <ul class="dropdown-list">
+                  <li> Edit Meal </li>
+                  <li>Delete Meal </li>
+                </ul>
+              </div>
+              <div class="content">
+                <span class="price">N1500</span>
+                <span class="desc">
+                  1 portion of Fried Rice and 2 Turkeys
+                </span>
+              </div>
+            </div>
+            <div class="meal-card">
+              <img src="./assets/images/fried_rice.jpg" alt="" />
+              <div class="meal-title">
+                <h4>Fried Rice</h4>
+              </div>
+              <div class="dropdown">
+                <img class="dropdown-icon" src="./assets/images/meal-menu.svg" alt="" />
+                <ul class="dropdown-list">
+                  <li> Edit Meal </li>
+                  <li>Delete Meal </li>
                 </ul>
               </div>
               <div class="content">
@@ -233,6 +252,11 @@
       let modalCloseBtn = document.querySelector(".modal-close-btn");
       let addMealModalBtn = document.querySelector(".add-meal-modal-btn");
 
+
+      // dropdown icon
+      let dropDownIcon = document.querySelector(".dropdown-icon")
+      let dropDownList = document.querySelector(".dropdown-list")
+
       hamburger.onclick = () => {
         sidebar.classList.toggle("active");
       };
@@ -259,6 +283,12 @@
       addMealModalBtn.onclick = () => {
         modal.classList.remove("show");
       };
+
+      // show dropdown list on click
+      dropDownIcon.onclick = () => {
+        dropDownList.classList.toggle("show")
+      }
+
     </script>
   </body>
 </html>
