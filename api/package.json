@@ -8,9 +8,9 @@
   "scripts": {
     "start": "nodemon --exec babel-node index.js",
     "test": "nyc  mocha -r  @babel/register --exit",
-    "generate-lcov": "nyc report --reporter=text-lcov > lcov.info",
-    "coveralls-coverage": "coveralls < lcov.info",
-    "coverage": "nyc -all npm test && npm run generate-lcov && npm run coveralls-coverage"
+    "generate-lcov": "nyc report --reporter=text-lcov",
+    "coveralls-coverage": "coveralls ",
+    "coverage": "nyc -all npm test && npm run generate-lcov | coveralls"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
