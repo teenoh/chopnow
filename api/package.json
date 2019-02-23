@@ -8,8 +8,8 @@
   "scripts": {
     "start": "nodemon --exec babel-node index.js",
     "test": "nyc mocha -r  @babel/register --exit",
-    "generate-lcov": "nyc report --reporter=lcov --reporter=text-lcov > coverage/lcov.info",
-    "coveralls-coverage": "coveralls < coverage/lcov.info",
+    "generate-lcov": "nyc report --reporter=lcov --reporter=text-lcov > lcov.info",
+    "coveralls-coverage": "coveralls < lcov.info",
     "coverage": "nyc npm test && npm run generate-lcov && npm run coveralls-coverage"
   },
   "devDependencies": {
