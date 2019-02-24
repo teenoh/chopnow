@@ -7,6 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon --exec babel-node index.js",
+    "start:prod": "node index.js",
+    "deploy": "",
     "test": "mocha test/*.js --compilers js:@babel/register "
   },
   "devDependencies": {
@@ -26,5 +28,8 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }

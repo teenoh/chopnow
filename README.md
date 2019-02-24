@@ -10,3 +10,6 @@ An application that allows customers to order food online.
 
 Run this command to display content of ui directory on github pages
 `git subtree push --prefix ui origin gh-pages`
+
+Run this command to deploy api to heroku
+`git subtree push --prefix api heroku master`
