@@ -1,13 +1,24 @@
-import OrderService from '../services/order.service';
-const OrderController = {
-  fetchAllOrders: (req, res) => {
-    const allOrders = OrderService.fetchAllOrders();
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _order = _interopRequireDefault(require("../services/order.service"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var OrderController = {
+  fetchAllOrders: function fetchAllOrders(req, res) {
+    var allOrders = _order.default.fetchAllOrders();
+
     return res.json({
       status: 'sucess',
       data: allOrders
     }).status(200);
   },
-  addOrder: (req, res) => {
+  addOrder: function addOrder(req, res) {
     /*
         Expect json of the format
         {
@@ -23,25 +34,26 @@ const OrderController = {
                     }]
         },
     */
-    const newOrder = req.body;
-    const createdOrder = OrderService.addOrder(newOrder);
+    var newOrder = req.body;
+
+    var createdOrder = _order.default.addOrder(newOrder);
+
     return res.json({
       status: 'success',
       data: createdOrder
     }).status(201);
   },
-  updateOrder: (req, res) => {
-    const {
-      id
-    } = req.params;
-    const updatedOrder = req.body; // get updated order data from body
+  updateOrder: function updateOrder(req, res) {
+    var id = req.params.id;
+    var updatedOrder = req.body; // get updated order data from body
 
-    const newOrder = OrderService.updateOrder(id, updatedOrder);
+    var newOrder = _order.default.updateOrder(id, updatedOrder);
+
     return res.json({
       status: 'success',
       data: newOrder
     }).status(200);
   }
 };
-export default OrderController;
-//# sourceMappingURL=order.controller.js.map
+var _default = OrderController;
+exports.default = _default;

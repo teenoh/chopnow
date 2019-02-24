@@ -1,18 +1,26 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import mealRoutes from './routes/meal.route';
-import menuRoutes from './routes/menu.route';
-import orderRoutes from './routes/order.route';
-const app = express();
-const PORT = 9001;
-app.use(bodyParser.json());
-app.get('/', (req, res) => {
+"use strict";
+
+var _express = _interopRequireDefault(require("express"));
+
+var _bodyParser = _interopRequireDefault(require("body-parser"));
+
+var _meal = _interopRequireDefault(require("./routes/meal.route"));
+
+var _menu = _interopRequireDefault(require("./routes/menu.route"));
+
+var _order = _interopRequireDefault(require("./routes/order.route"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var app = (0, _express.default)();
+var PORT = 9001;
+app.use(_bodyParser.default.json());
+app.get('/', function (req, res) {
   return res.send('The API is ready!');
 });
-app.use('/api/v1/meals', mealRoutes);
-app.use('/api/v1/menu', menuRoutes);
-app.use('/api/v1/orders', orderRoutes);
-app.listen(PORT, () => {
-  console.log(`Server is running on PORT ${PORT}`);
+app.use('/api/v1/meals', _meal.default);
+app.use('/api/v1/menu', _menu.default);
+app.use('/api/v1/orders', _order.default);
+app.listen(PORT, function () {
+  console.log("Server is running on PORT ".concat(PORT));
 });
-//# sourceMappingURL=index.js.map

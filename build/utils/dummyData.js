@@ -1,4 +1,10 @@
-export default {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
   meals: [{
     id: 1,
     name: 'Fried Rice',
@@ -138,4 +144,4 @@ export default {
     created_at: '17/02/2019'
   }]
 };
-//# sourceMappingURL=dummyData.js.map
+exports.default = _default;

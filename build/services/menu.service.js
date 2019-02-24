@@ -1,9 +1,20 @@
-import dummyData from '../utils/dummyData';
-import Menu from '../models/menu.model';
-const MenuService = {
-  fetchAllMenus: () => {
-    return dummyData.menus.map(menu => {
-      const newMenu = new Menu();
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _dummyData = _interopRequireDefault(require("../utils/dummyData"));
+
+var _menu = _interopRequireDefault(require("../models/menu.model"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var MenuService = {
+  fetchAllMenus: function fetchAllMenus() {
+    return _dummyData.default.menus.map(function (menu) {
+      var newMenu = new _menu.default();
       newMenu.id = menu.id;
       newMenu.day = menu.day;
       newMenu.meals = menu.meals;
@@ -11,14 +22,16 @@ const MenuService = {
       return newMenu;
     });
   },
-  addMenu: menu => {
-    const menuLen = dummyData.menus.length;
-    const lastId = dummyData.menus[menuLen - 1].id;
-    const newId = lastId + 1;
+  addMenu: function addMenu(menu) {
+    var menuLen = _dummyData.default.menus.length;
+    var lastId = _dummyData.default.menus[menuLen - 1].id;
+    var newId = lastId + 1;
     menu.id = newId;
-    dummyData.menus.push(menu);
+
+    _dummyData.default.menus.push(menu);
+
     return menu;
   }
 };
-export default MenuService;
-//# sourceMappingURL=menu.service.js.map
+var _default = MenuService;
+exports.default = _default;

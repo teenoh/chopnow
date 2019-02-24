@@ -1,13 +1,24 @@
-import MenuService from '../services/menu.service';
-const MealController = {
-  fetchAllMenus: (req, res) => {
-    const allMenus = MenuService.fetchAllMenus();
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _menu = _interopRequireDefault(require("../services/menu.service"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var MealController = {
+  fetchAllMenus: function fetchAllMenus(req, res) {
+    var allMenus = _menu.default.fetchAllMenus();
+
     return res.json({
       status: 'sucess',
       data: allMenus
     }).status(200);
   },
-  addAMenu: (req, res) => {
+  addAMenu: function addAMenu(req, res) {
     /*
                 Expect json of the format
                 {
@@ -26,18 +37,18 @@ const MealController = {
                     vendor_id: 1
                 },
             */
-    const newMenu = req.body;
-    const createdMeal = MenuService.addMenu(newMenu);
+    var newMenu = req.body;
+
+    var createdMeal = _menu.default.addMenu(newMenu);
+
     return res.json({
       status: 'success',
       data: createdMeal
     }).status(201);
   },
-  getSingleMeal: (req, res) => {
-    const {
-      id
-    } = req.params;
-    const foundMeal = MealService.getAMeal(id);
+  getSingleMeal: function getSingleMeal(req, res) {
+    var id = req.params.id;
+    var foundMeal = MealService.getAMeal(id);
     return res.json({
       status: 'success',
       data: foundMeal
@@ -64,5 +75,5 @@ const MealController = {
   //   }
 
 };
-export default MealController;
-//# sourceMappingURL=menu.controller.js.map
+var _default = MealController;
+exports.default = _default;
