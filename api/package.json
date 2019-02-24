@@ -7,17 +7,15 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon --exec babel-node index.js",
-    "test": "nyc  mocha -r  @babel/register --exit",
-    "generate-lcov": "nyc report --reporter=text-lcov",
-    "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",
-    "coveralls-coverage": "coveralls < lcov.info",
-    "coverage": "nyc -all npm test && npm run generate-lcov && npm run coveralls-coverage && npm run code-climate-coverage"
+    "test": "nyc mocha --require @babel/register --exit",
+    "coverage": "nyc report --reporter=lcov --reporter=text-lcov | coveralls"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
     "@babel/register": "^7.0.0",
+    "babel-plugin-istanbul": "^5.1.1",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
     "codeclimate-test-reporter": "^0.5.1",
@@ -27,6 +25,7 @@
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-prettier": "^3.0.1",
+    "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
     "mocha-lcov-reporter": "^1.3.0",
     "nodemon": "^1.18.10",
