@@ -13,7 +13,7 @@ var _order = _interopRequireDefault(require("./routes/order.route"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = (0, _express.default)();
-var PORT = 9001;
+var PORT = process.env.PORT || 9001;
 app.use(_bodyParser.default.json());
 app.get('/', function (req, res) {
   return res.send('The API is ready!');
