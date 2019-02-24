@@ -8,7 +8,6 @@ env:
     - CC_TEST_REPORTER_ID=bb4bc94f945f1cdf63074c6788fe31b9eb2521e7f4a0b742110825c41d78c729
 
 install:
-  - cd api
   - npm install
 
 cache:
