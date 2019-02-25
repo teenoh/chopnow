@@ -21,7 +21,11 @@ const MenuService = {
 
     dummyData.menus.push(menu);
     return menu;
-  }
+  },
+  getAMenu: id => {
+    const menu = dummyData.menus.find(menu => menu.id == id);
+    return menu || {};
+  },
 };
 
 export default MenuService;
