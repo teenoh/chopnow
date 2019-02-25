@@ -12,7 +12,7 @@
     "clean": "rm -rf build && mkdir build",
     "build-babel": "babel ./api -d ./build",
     "build": "npm run clean && npm run build-babel",
-    "test": "cross-env NODE_ENV=test nyc mocha -r '@babel/register' --recursive --exit",
+    "test": "nyc mocha -r '@babel/register' --exit",
     "generate-lcov": "nyc report --reporter=text-lcov >lcov.info",
     "coveralls-coverage": "coveralls < lcov.info",
     "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",
