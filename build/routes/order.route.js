@@ -13,6 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var router = (0, _express.Router)();
 router.get('/', _order.default.fetchAllOrders);
+router.get('/:id', _order.default.getSingleOrder);
 router.post('/', _order.default.addOrder);
 router.put('/:id', _order.default.updateOrder);
 var _default = router;

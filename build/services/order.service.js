@@ -37,6 +37,13 @@ var OrderService = {
 
     return order;
   },
+  getAnOrder: function getAnOrder(id) {
+    var order = _dummyData.default.orders.find(function (order) {
+      return order.id == id;
+    });
+
+    return order || {};
+  },
   updateOrder: function updateOrder(id, updatedOrder) {
     var oldOrderIndex = _dummyData.default.orders.findIndex(function (meal) {
       return meal.id == id;

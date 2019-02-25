@@ -31,6 +31,13 @@ var MenuService = {
     _dummyData.default.menus.push(menu);
 
     return menu;
+  },
+  getAMenu: function getAMenu(id) {
+    var menu = _dummyData.default.menus.find(function (menu) {
+      return menu.id == id;
+    });
+
+    return menu || {};
   }
 };
 var _default = MenuService;

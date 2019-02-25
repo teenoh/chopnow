@@ -13,10 +13,10 @@ var MealController = {
   fetchAllMeals: function fetchAllMeals(req, res) {
     var allMeals = _meal.default.fetchAllMeals();
 
-    return res.json({
-      status: 'sucess',
+    return res.status(200).send({
+      status: 'success',
       data: allMeals
-    }).status(200);
+    });
   },
   addAMeal: function addAMeal(req, res) {
     /*
@@ -31,20 +31,20 @@ var MealController = {
 
     var createdMeal = _meal.default.addMeal(newMeal);
 
-    return res.json({
+    return res.status(201).send({
       status: 'success',
       data: createdMeal
-    }).status(201);
+    });
   },
   getSingleMeal: function getSingleMeal(req, res) {
     var id = req.params.id;
 
     var foundMeal = _meal.default.getAMeal(id);
 
-    return res.json({
+    return res.status(200).send({
       status: 'success',
       data: foundMeal
-    }).status(200);
+    });
   },
   updateAMeal: function updateAMeal(req, res) {
     var id = req.params.id;
@@ -52,19 +52,19 @@ var MealController = {
 
     var newMeal = _meal.default.updateAMeal(id, updatedMeal);
 
-    return res.json({
+    return res.status(200).send({
       status: 'success',
       data: newMeal
-    }).status(200);
+    });
   },
   deleteAMeal: function deleteAMeal(req, res) {
     var id = req.params.id;
 
     _meal.default.deleteAMeal(id);
 
-    return res.json({
+    return res.status(204).send({
       status: 'success'
-    }).status(204);
+    });
   }
 };
 var _default = MealController;

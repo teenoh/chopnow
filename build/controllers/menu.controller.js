@@ -9,14 +9,14 @@ var _menu = _interopRequireDefault(require("../services/menu.service"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var MealController = {
+var MenuController = {
   fetchAllMenus: function fetchAllMenus(req, res) {
     var allMenus = _menu.default.fetchAllMenus();
 
-    return res.json({
-      status: 'sucess',
+    return res.status(200).send({
+      status: 'success',
       data: allMenus
-    }).status(200);
+    });
   },
   addAMenu: function addAMenu(req, res) {
     /*
@@ -39,41 +39,23 @@ var MealController = {
             */
     var newMenu = req.body;
 
-    var createdMeal = _menu.default.addMenu(newMenu);
+    var createdMenu = _menu.default.addMenu(newMenu);
 
-    return res.json({
+    return res.status(201).send({
       status: 'success',
-      data: createdMeal
-    }).status(201);
+      data: createdMenu
+    });
   },
-  getSingleMeal: function getSingleMeal(req, res) {
+  getSingleMenu: function getSingleMenu(req, res) {
     var id = req.params.id;
-    var foundMeal = MealService.getAMeal(id);
-    return res.json({
-      status: 'success',
-      data: foundMeal
-    }).status(200);
-  } //   updateAMeal: (req, res) => {
-  //     const { id } = req.params;
-  //     const updatedMeal = req.body; // get updated meal data from body
-  //     const newMeal = MealService.updateAMeal(id, updatedMeal);
-  //     return res
-  //       .json({
-  //         status: 'success',
-  //         data: newMeal
-  //       })
-  //       .status(200);
-  //   },
-  //   deleteAMeal: (req, res) => {
-  //     const { id } = req.params;
-  //     MealService.deleteAMeal(id);
-  //     return res
-  //       .json({
-  //         status: 'success'
-  //       })
-  //       .status(204);
-  //   }
 
+    var foundMenu = _menu.default.getAMenu(id);
+
+    return res.status(200).send({
+      status: 'success',
+      data: foundMenu
+    });
+  }
 };
-var _default = MealController;
+var _default = MenuController;
 exports.default = _default;

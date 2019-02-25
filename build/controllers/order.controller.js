@@ -13,10 +13,10 @@ var OrderController = {
   fetchAllOrders: function fetchAllOrders(req, res) {
     var allOrders = _order.default.fetchAllOrders();
 
-    return res.json({
-      status: 'sucess',
+    return res.status(200).send({
+      status: 'success',
       data: allOrders
-    }).status(200);
+    });
   },
   addOrder: function addOrder(req, res) {
     /*
@@ -38,10 +38,20 @@ var OrderController = {
 
     var createdOrder = _order.default.addOrder(newOrder);
 
-    return res.json({
+    return res.status(201).send({
       status: 'success',
       data: createdOrder
-    }).status(201);
+    });
+  },
+  getSingleOrder: function getSingleOrder(req, res) {
+    var id = req.params.id;
+
+    var foundOrder = _order.default.getAnOrder(id);
+
+    return res.status(200).send({
+      status: 'success',
+      data: foundOrder
+    });
   },
   updateOrder: function updateOrder(req, res) {
     var id = req.params.id;
@@ -49,10 +59,10 @@ var OrderController = {
 
     var newOrder = _order.default.updateOrder(id, updatedOrder);
 
-    return res.json({
+    return res.status(200).send({
       status: 'success',
       data: newOrder
-    }).status(200);
+    });
   }
 };
 var _default = OrderController;
