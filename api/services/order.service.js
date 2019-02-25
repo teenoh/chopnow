@@ -23,6 +23,10 @@ const OrderService = {
     dummyData.orders.push(order);
     return order;
   },
+  getAnOrder: id => {
+    const order = dummyData.orders.find(order => order.id == id);
+    return order || {};
+  },
   updateOrder: (id, updatedOrder) => {
     const oldOrderIndex = dummyData.orders.findIndex(meal => meal.id == id);
     const oldOrder = dummyData.orders[oldOrderIndex];

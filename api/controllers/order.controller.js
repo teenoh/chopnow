@@ -30,11 +30,19 @@ const OrderController = {
     const newOrder = req.body;
     const createdOrder = OrderService.addOrder(newOrder);
 
-    return res.status(200)
+    return res.status(201)
       .send({
         status: 'success',
         data: createdOrder
       })
+  },
+  getSingleOrder: (req, res) => {
+    const { id } = req.params;
+    const foundOrder = OrderService.getAnOrder(id);
+    return res.status(200).send({
+      status: 'success',
+      data: foundOrder
+    });
   },
   updateOrder: (req, res) => {
     const { id } = req.params;
