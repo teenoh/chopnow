@@ -14,5 +14,6 @@ Run this command to display content of ui directory on github pages
 Run this command to deploy api to heroku
 `git subtree push --prefix api heroku master`
 
-API link 
+API link
+
 https://chopnow-api.herokuapp.com/
