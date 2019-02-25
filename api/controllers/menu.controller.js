@@ -1,14 +1,12 @@
 import MenuService from '../services/menu.service';
 
-const MealController = {
+const MenuController = {
   fetchAllMenus: (req, res) => {
     const allMenus = MenuService.fetchAllMenus();
-    return res
-      .json({
-        status: 'sucess',
-        data: allMenus
-      })
-      .status(200);
+    return res.status(200).send({
+      status: 'success',
+      data: allMenus
+    });
   },
 
   addAMenu: (req, res) => {
@@ -32,25 +30,21 @@ const MealController = {
             */
 
     const newMenu = req.body;
-    const createdMeal = MenuService.addMenu(newMenu);
+    const createdMenu = MenuService.addMenu(newMenu);
 
-    return res
-      .json({
-        status: 'success',
-        data: createdMeal
-      })
-      .status(201);
+    return res.status(201).send({
+      status: 'success',
+      data: createdMenu
+    });
   },
-  getSingleMeal: (req, res) => {
+  getSingleMenu: (req, res) => {
     const { id } = req.params;
-    const foundMeal = MealService.getAMeal(id);
-    return res
-      .json({
-        status: 'success',
-        data: foundMeal
-      })
-      .status(200);
+    const foundMenu = MenuService.getAMenu(id);
+    return res.status(200).send({
+      status: 'success',
+      data: foundMenu
+    });
   }
 };
 
-export default MealController;
+export default MenuController;

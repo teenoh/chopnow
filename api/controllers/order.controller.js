@@ -3,12 +3,11 @@ import OrderService from '../services/order.service';
 const OrderController = {
   fetchAllOrders: (req, res) => {
     const allOrders = OrderService.fetchAllOrders();
-    return res
-      .json({
-        status: 'sucess',
+    return res.status(200)
+      .send({
+        status: 'success',
         data: allOrders
-      })
-      .status(200);
+      });
   },
 
   addOrder: (req, res) => {
@@ -31,24 +30,30 @@ const OrderController = {
     const newOrder = req.body;
     const createdOrder = OrderService.addOrder(newOrder);
 
-    return res
-      .json({
+    return res.status(201)
+      .send({
         status: 'success',
         data: createdOrder
       })
-      .status(201);
+  },
+  getSingleOrder: (req, res) => {
+    const { id } = req.params;
+    const foundOrder = OrderService.getAnOrder(id);
+    return res.status(200).send({
+      status: 'success',
+      data: foundOrder
+    });
   },
   updateOrder: (req, res) => {
     const { id } = req.params;
     const updatedOrder = req.body; // get updated order data from body
     const newOrder = OrderService.updateOrder(id, updatedOrder);
 
-    return res
-      .json({
+    return res.status(200)
+      .send({
         status: 'success',
         data: newOrder
       })
-      .status(200);
   }
 };
 
