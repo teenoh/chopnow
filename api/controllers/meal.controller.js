@@ -3,12 +3,10 @@ import MealService from '../services/meal.service';
 const MealController = {
   fetchAllMeals: (req, res) => {
     const allMeals = MealService.fetchAllMeals();
-    return res
-      .json({
-        status: 'success',
-        data: allMeals
-      })
-      .status(200);
+    return res.status(200).send({
+      status: 'success',
+      data: allMeals
+    });
   },
 
   addAMeal: (req, res) => {
@@ -24,44 +22,35 @@ const MealController = {
     const newMeal = req.body;
     const createdMeal = MealService.addMeal(newMeal);
 
-    return res
-      .json({
-        status: 'success',
-        data: createdMeal
-      })
-      .status(201);
+    return res.status(201).send({
+      status: 'success',
+      data: createdMeal
+    });
   },
   getSingleMeal: (req, res) => {
     const { id } = req.params;
     const foundMeal = MealService.getAMeal(id);
-    return res
-      .json({
-        status: 'success',
-        data: foundMeal
-      })
-      .status(200);
+    return res.status(200).send({
+      status: 'success',
+      data: foundMeal
+    });
   },
   updateAMeal: (req, res) => {
     const { id } = req.params;
     const updatedMeal = req.body; // get updated meal data from body
     const newMeal = MealService.updateAMeal(id, updatedMeal);
 
-    return res
-      .json({
-        status: 'success',
-        data: newMeal
-      })
-      .status(200);
+    return res.status(200).send({
+      status: 'success',
+      data: newMeal
+    });
   },
   deleteAMeal: (req, res) => {
     const { id } = req.params;
     MealService.deleteAMeal(id);
-
-    return res
-      .json({
-        status: 'success'
-      })
-      .status(204);
+    return res.status(204).send({
+      status: 'success'
+    });
   }
 };
 
