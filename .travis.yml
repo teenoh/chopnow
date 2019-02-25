@@ -15,10 +15,5 @@ cache:
     - "node_modules"
 
 
-script:
-  - npm test
-
 after_success:
   - npm run coverage
-  - npm install codeclimate-test-reporter
-  - codeclimate-test-reporter < lcov.info
