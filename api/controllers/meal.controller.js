@@ -5,7 +5,7 @@ const MealController = {
     const allMeals = MealService.fetchAllMeals();
     return res
       .json({
-        status: 'sucess',
+        status: 'success',
         data: allMeals
       })
       .status(200);
