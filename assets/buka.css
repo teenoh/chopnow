@@ -207,7 +207,7 @@ header .details {
 }
 
 .checkout-btn {
-  /* display: block; */
+  display: inline-block;
   background-color: var(--green);
   cursor: pointer;
   width: 100%;
