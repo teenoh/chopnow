@@ -199,9 +199,9 @@
         </div>
       </div>
       <div>
-        <button class="btn checkout-btn">
+        <a href="order-confirmation.html" class="btn checkout-btn">
           CHECKOUT
-        </button>
+        </a>
       </div>
     </aside>
     <button class="btn mobile-view-cart-btn">
@@ -243,10 +243,10 @@
       cartContainer.classList.remove("mobile-active")
     }
 
-    checkoutBtn.onclick = () => {
-      cartContainer.classList.remove("mobile-active")  //close cart screen
-      modal.classList.toggle('show')
-    }
+    // checkoutBtn.onclick = () => {
+    //   cartContainer.classList.remove("mobile-active")  //close cart screen
+    //   modal.classList.toggle('show')
+    // }
 
     modalCloseBtn.onclick = () => {
       modal.classList.remove("show")
