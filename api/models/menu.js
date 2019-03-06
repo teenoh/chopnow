@@ -5,9 +5,18 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     date: {type: DataTypes.DATEONLY},
+    catererId: {
+      type: DataTypes.INTEGER,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'Users',
+        key: 'id',
+        as: 'catererId'
+      }
+    }
     
   }, {});
   Menu.associate = (models) => {
@@ -20,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
     Menu.belongsToMany(models.Meal, {
       as: 'meals',
       foreignKey: 'menuId',
-      through: 'MenuModel'
+      through: 'MenuMeal'
     })
   };
   return Menu;

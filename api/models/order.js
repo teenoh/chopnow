@@ -5,12 +5,27 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
-    meals: DataTypes.ARRAY
+    userId: {
+      type: DataTypes.INTEGER,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'Users',
+        key: 'id',
+        as: 'userId'
+      }
+    }
   }, {});
   Order.associate = function(models) {
     // associations can be defined here
+    Order.belongsTo(models.User, {
+      foreignKey: 'userId',
+      onDelete: 'CASCADE'
+    })
+
+    
+
   };
   return Order;
 };

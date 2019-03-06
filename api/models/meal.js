@@ -6,7 +6,7 @@ export default (sequelize, DataTypes) => {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER
       },
       name: {
         type: DataTypes.STRING,
@@ -42,6 +42,11 @@ export default (sequelize, DataTypes) => {
     Meal.belongsTo(models.User, {
       foreignKey: 'catererId',
       onDelete: 'CASCADE'
+    })
+    Meal.belongsToMany(models.Menu, {
+      as: 'menus',
+      foreignKey: 'mealId',
+      through: 'MenuMeal'
     })
   };
   return Meal;
