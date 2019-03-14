@@ -71,7 +71,6 @@ describe('Meal API Routes test', () => {
         .set('Accept', 'application/json')
         .send(newMeal)
         .end((err, res) => {
-          console.log('addMeal => ', res.body);
           expect(res.status).to.be.equal(201);
           expect(res.type).to.be.equal('application/json');
           expect(res.body.status).to.be.equal('success');
