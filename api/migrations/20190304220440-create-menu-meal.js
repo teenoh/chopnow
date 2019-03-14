@@ -26,6 +26,12 @@ module.exports = {
           as: 'menuId'
         }
       },
+      category: {
+        type: Sequelize.ENUM,
+        allowNull: false,
+        defaultValue: 'breakfast',
+        values: ['breakfast', 'lunch', 'dinner']
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
