@@ -1,11 +1,14 @@
-import MealService from '../services/meal.service';
-import models from '../models';
+// import MealService from '../services/meal.service';
+import models from '../models/index';
 
 class MealController {
   static async fetchAllMeals(req, res) {
     try {
       const meals = await models.Meal.findAll();
-      console.log(meals);
+      const menu = await models.Menu.findOne({
+        where: { id: 2 },
+        include: [{ model: models.Meal, as: 'meals' }]
+      });
       return res.status(200).json({
         status: 'success',
         data: meals
@@ -37,7 +40,7 @@ class MealController {
     } catch (err) {
       return res.status(400).json({
         status: 'error',
-        message: err.message
+        message: err
       });
     }
   }
