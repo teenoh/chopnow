@@ -12,7 +12,7 @@
     "clean": "rm -rf build && mkdir build",
     "build-babel": "babel ./api -d ./build",
     "build": "NODE_ENV=production npm run clean && npm run build-babel",
-    "test": "NODE_ENV=test nyc mocha -r '@babel/register' -t 5000 --exit",
+    "test": "npm run migrate:test && npm run seed:test && NODE_ENV=test nyc mocha -r '@babel/register' -t 5000 --exit",
     "migrate:test": "sequelize db:migrate:undo:all --env=test && sequelize db:migrate --env=test",
     "seed:test": "sequelize db:seed:all --env=test",
     "migrate": "sequelize db:migrate:undo:all && sequelize db:migrate",

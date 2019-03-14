@@ -24,6 +24,12 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     })
 
+    Order.belongsToMany(models.Meal, {
+      as: 'meals',
+      foreignKey: 'orderId',
+      through: 'OrderItem'
+    })
+
     
 
   };
