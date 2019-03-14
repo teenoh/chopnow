@@ -16,19 +16,19 @@ module.exports = {
       'Menus',
       [
         {
-          date: new Date(),
+          date: new Date('2019-1-1'),
           catererId: 1,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          date: new Date(),
+          date: new Date('2019-1-2'),
           catererId: 1,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          date: new Date(),
+          date: new Date('2019-1-3'),
           catererId: 1,
           createdAt: new Date(),
           updatedAt: new Date()
