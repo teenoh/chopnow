@@ -54,7 +54,6 @@ describe('Menu API Routes test', () => {
         .post('/api/v1/menu/')
         .send(menu2)
         .end((err, res) => {
-          console.log('stuff ==>', res.body);
           expect(res.status).to.be.equal(201);
           expect(res.type).to.be.equal('application/json');
           expect(res.body.status).to.be.equal('success');
@@ -66,21 +65,25 @@ describe('Menu API Routes test', () => {
   });
 
   // UPDATE A MENU
-  //
-  // describe('UPDATE a menu', () => {
-  //   it('should update an existing menu  /menu/:id', done => {
-  //     request(app)
-  //       .post('/api/v1/menu/4/')
-  //       .send({ ...menu2, meals: [{ id: 2, category: 'dinner' }, { id: 3, category: 'dinner' }]})
-  //       .end((err, res) => {
-  //         console.log('stuff ==>', res.body);
-  //         expect(res.status).to.be.equal(201);
-  //         expect(res.type).to.be.equal('application/json');
-  //         expect(res.body.status).to.be.equal('success');
-  //         expect(res.body.data).to.be.a('object');
-  //         expect(res.body.data.caterer.id).to.be.equal(menu2.catererId);
-  //         done();
-  //       });
-  //   });
-  // });
+  
+  describe('UPDATE a menu', () => {
+    const updateMenu = { ...menu2, meals: [{ id: 2, category: 'dinner' }, { id: 3, category: 'dinner' }] } 
+    it('should update an existing menu  /menu/:id', done => {
+      request(app)
+        .put('/api/v1/menu/4/')
+        .send(updateMenu)
+        .end((err, res) => {
+          console.log('stuff ==>', res.body);
+          expect(res.status).to.be.equal(200);
+          expect(res.type).to.be.equal('application/json');
+          expect(res.body.status).to.be.equal('success');
+          expect(res.body.data).to.be.a('object');
+          expect(res.body.data.caterer.id).to.be.equal(menu2.catererId);
+          expect(res.body.data.meals.length).to.be.equal(updateMenu.meals.length);
+          expect(res.body.data.meals[0].MenuMeal.category).to.be.equal('dinner');
+          expect(res.body.data.meals[1].MenuMeal.category).to.be.equal('dinner');
+          done();
+        });
+    });
+  });
 });
