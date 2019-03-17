@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
   Order.associate = function(models) {
     // associations can be defined here
     Order.belongsTo(models.User, {
+      as: 'customer',
       foreignKey: 'userId',
       onDelete: 'CASCADE'
     })
@@ -27,11 +28,10 @@ module.exports = (sequelize, DataTypes) => {
     Order.belongsToMany(models.Meal, {
       as: 'meals',
       foreignKey: 'orderId',
+      otherKey: 'mealId',
       through: 'OrderItem'
     })
-
-    
-
   };
+  
   return Order;
 };

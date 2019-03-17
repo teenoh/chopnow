@@ -73,7 +73,7 @@ class MenuController {
         });
       });
     } catch (err) {
-      console.log('\n\n\n error ==> \n\n',err);
+      console.log('\n\n\n error ==> \n\n', err);
       return res.status(400).json({
         status: 'error',
         message: err
@@ -105,57 +105,45 @@ class MenuController {
     }
   }
 
-  // static async updateMenu(req, res) {
-  //   try {
-  //     const { id } = req.params;
+  static async updateMenu(req, res) {
+    try {
+      const {
+        params: { id },
+        body: { meals }
+      } = req;
 
-  //     const meal = await models.Meal.findOne({ where: { id } });
-  //     if (!meal) {
-  //       throw Error(`Meal with ID ${id} does not exist`);
-  //     }
+      const menu = await models.Menu.findOne({ where: { id } });
 
-  //     const updates = {
-  //       name: req.body.name || meal.name,
-  //       price: req.body.price || meal.price,
-  //       desc: req.body.desc || meal.desc
-  //     };
+      if (!menu) {
+        throw Error(`Menu with ID ${id} does not exist`);
+      }
 
-  //     const updatedMeal = await models.Meal.update(updates, { where: { id } });
+      const menuMeals = [...new Set(meals)]; // make sure all meal instances are unique
 
-  //     return res.status(200).json({
-  //       status: 'success',
-  //       data: await MealController.getSingleMeal(id)
-  //     });
-  //   } catch (err) {
-  //     return res.status(400).json({
-  //       status: 'error',
-  //       message: err.message
-  //     });
-  //   }
-  // }
+      // clear existing meals
+      await menu.setMeals([], { through: models.MenuMeal });
 
-  // static async deleteAMeal(req, res) {
-  //   try {
-  //     const { id } = req.params;
+      // create new menumeals and assign to menu
+      const menu_meals = await Promise.all(
+        await menuMeals.map(async meal => {
+          return await models.MenuMeal.findOrCreate({
+            where: { mealId: meal.id, category: meal.category, menuId: menu.id }
+          });
+        })
+      );
 
-  //     const meal = await models.Meal.findOne({ where: { id } });
-  //     if (!meal) {
-  //       throw Error(`Meal with ID ${id} does not exist`);
-  //     }
-
-  //     await meal.destroy();
-
-  //     return res.status(200).send({
-  //       status: 'success',
-  //       message: 'Meal Deleted'
-  //     });
-  //   } catch (err) {
-  //     return res.status(500).json({
-  //       status: 'error',
-  //       message: err.message
-  //     });
-  //   }
-  // }
+      return res.status(200).json({
+        status: 'success',
+        data: await MenuController.getSingleMenu(id)
+      });
+    } catch (err) {
+      console.log('\n\n\\n\n\n\n\n', err)
+      return res.status(400).json({
+        status: 'error',
+        message: err.message
+      });
+    }
+  }
 }
 
 export default MenuController;
