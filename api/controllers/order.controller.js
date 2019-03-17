@@ -1,60 +1,136 @@
 // import OrderService from '../services/order.service';
+import models from '../models';
 
-// const OrderController = {
-//   fetchAllOrders: (req, res) => {
-//     const allOrders = OrderService.fetchAllOrders();
-//     return res.status(200)
-//       .send({
-//         status: 'success',
-//         data: allOrders
-//       });
-//   },
+class OrderController {
+  static async fetchAllOrders(req, res) {
+    try {
+      const allOrders = await models.Order.findAll({
+        include: [
+          {
+            model: models.User,
+            as: 'customer',
+            attributes: ['firstName', 'lastName', 'id']
+          },
+          {
+            model: models.Meal,
+            as: 'meals',
+            attributes: ['id', 'name', 'price', 'desc', 'imageUrl']
+          }
+        ],
+        attributes: ['id']
+      });
 
-//   addOrder: (req, res) => {
-//     /*
-//         Expect json of the format
-//         {
-//             id: 1,
-//             vendor_id: 1,
-//             customer_id: 4,
-//             created_at: '15/12/19',
-//             meals: [{
-//                         id: 1,
-//                         name: 'Fried Rice',
-//                         desc: 'Medium',
-//                         price: 450
-//                     }]
-//         },
-//     */
+      return res.status(200).json({
+        status: 'success',
+        data: allOrders
+      });
+    } catch (err) {
+    //   console.log(err);
+      return res.status(400).json({
+        status: 'error',
+        message: err.message
+      });
+    }
+  }
 
-//     const newOrder = req.body;
-//     const createdOrder = OrderService.addOrder(newOrder);
+  static async addOrder(req, res) {
+    try {
+      const { customer, meals } = req.body;
 
-//     return res.status(201)
-//       .send({
-//         status: 'success',
-//         data: createdOrder
-//       })
-//   },
-//   getSingleOrder: (req, res) => {
-//     const { id } = req.params;
-//     const foundOrder = OrderService.getAnOrder(id);
-//     return res.status(200).send({
-//       status: 'success',
-//       data: foundOrder
-//     });
-//   },
-//   updateOrder: (req, res) => {
-//     const { id } = req.params;
-//     const updatedOrder = req.body; // get updated order data from body
-//     const newOrder = OrderService.updateOrder(id, updatedOrder);
+      const uniqueItems = [...new Set(meals)]; //unique order items
 
-//     return res.status(200)
-//       .send({
-//         status: 'success',
-//         data: newOrder
-//       })
-//   }
-// };
+      const newOrder = await models.Order.create(
+        { userId: customer },
+        { include: [{ model: models.User, as: 'customer' }], attributes: ['id'] }
+      );
 
-// export default OrderController;
+    //   populate orderItems
+      await Promise.all(
+        await uniqueItems.map(async orderItem => {
+          return await models.OrderItem.findOrCreate({
+            where: { mealId: orderItem.id, quantity: orderItem.quantity, orderId: newOrder.id }
+          });
+        })
+      );
+
+      const fullNewOrder = await OrderController.getSingleOrder(newOrder.id);
+
+      return res.status(201).json({
+        status: 'success',
+        data: fullNewOrder
+      });
+    } catch (err) {
+    //   console.log('\n\n\n error ==> \n\n', err);
+      return res.status(400).json({
+        status: 'error',
+        message: err
+      });
+    }
+  }
+
+  static async updateOrder(req, res) {
+    try {
+      const {
+        params: { id },
+        body: { meals, customer }
+      } = req;
+
+      const order = await models.Order.findOne({ where: { id, userId: customer } });
+
+      if (!order) {
+        throw Error(`Order with ID ${id} does not exist`);
+      }
+
+      const uniqueMeals = [...new Set(meals)]; // make sure all meal instances are unique
+
+      // clear existing meals
+      await order.setMeals([], { through: models.OrderItem });
+
+      // create new orderitems and assign to order
+      await Promise.all(
+        await uniqueMeals.map(async meal => {
+          return await models.OrderItem.findOrCreate({
+            where: { mealId: meal.id, quantity: meal.quantity, orderId: order.id }
+          });
+        })
+      );
+
+      return res.status(200).json({
+        status: 'success',
+        data: await OrderController.getSingleOrder(id)
+      });
+    } catch (err) {
+    //   console.log('\n\n\\n\n\n\n\n', err);
+      return res.status(400).json({
+        status: 'error',
+        message: err.message
+      });
+    }
+  }
+
+  static async getSingleOrder(id) {
+    try {
+      const foundOrder = await models.Order.findOne({
+        where: { id },
+        include: [
+          {
+            model: models.User,
+            as: 'customer',
+            attributes: ['firstName', 'lastName', 'id']
+          },
+          {
+            model: models.Meal,
+            as: 'meals',
+            attributes: ['id', 'name', 'price', 'desc', 'imageUrl']
+          }
+        ]
+      });
+      return foundOrder;
+    } catch (err) {
+      // console.log("err ==>", err, '\n\n\n\n')
+      throw Error(`Order with ID ${id} does not exist`);
+    }
+  }
+}
+
+export default OrderController;
