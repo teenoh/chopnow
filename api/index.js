@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import '@babel/polyfill';
 
 import mealRoutes from './routes/meal.route';
 import menuRoutes from './routes/menu.route';
@@ -17,7 +18,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/v1/meals', mealRoutes);
 app.use('/api/v1/menu', menuRoutes);
-app.use('/api/v1/orders', orderRoutes);
+// app.use('/api/v1/orders', orderRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);

@@ -1,16 +1,23 @@
 import dummyData from '../utils/dummyData';
-import Meal from '../models/meal.model';
+import models from '../models';
 
 const MealService = {
-  fetchAllMeals: () => {
-    return dummyData.meals.map(meal => {
-      const newMeal = new Meal();
-      newMeal.id = meal.id;
-      newMeal.name = meal.name;
-      newMeal.desc = meal.desc;
-      newMeal.price = meal.price;
-      return newMeal;
-    });
+  fetchAllMeals: async () => {
+    try {
+      let meals = await models.Meal.findAll();
+      // console.log(meals);
+      return meals;
+    } catch (e) {
+      console.log('error =>', e);
+    }
+    // return dummyData.meals.map(meal => {
+    //   const newMeal = new Meal();
+    //   newMeal.id = meal.id;
+    //   newMeal.name = meal.name;
+    //   newMeal.desc = meal.desc;
+    //   newMeal.price = meal.price;
+    //   return newMeal;
+    // });
   },
   addMeal: meal => {
     const mealLen = dummyData.meals.length;

@@ -7,6 +7,12 @@ env:
   global:
     - CODECLIMATE_REPO_TOKEN=bb4bc94f945f1cdf63074c6788fe31b9eb2521e7f4a0b742110825c41d78c729
 
+services:
+  - postgresql
+
+before_script:
+  - psql -c 'create database "chopnow-test";' -U postgres
+
 install:
   - npm install
 
